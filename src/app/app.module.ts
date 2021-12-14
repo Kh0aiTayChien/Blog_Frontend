@@ -13,6 +13,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
 // import { ContentComponent } from './components/content/content/content.component';
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,6 @@ import { PostCreateComponent } from './components/post/post-create/post-create.c
     FooterComponent,
     MasterComponent,
     SidebarComponent,
-    PostCreateComponent
   ],
   imports: [
     BrowserModule,
