@@ -8,7 +8,11 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { MasterComponent } from './master/master.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PostCreateComponent } from './components/post/post-create/post-create.component';
+// import { ContentComponent } from './components/content/content/content.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +20,15 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     FooterComponent,
     MasterComponent,
     SidebarComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NzButtonModule,
+    NzModalModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

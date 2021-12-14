@@ -8,7 +8,15 @@ const routes: Routes = [
     children: [
       {
         path: 'book',
-        loadChildren: () => import('./components/book/book.module').then(m => m.BookModule)
+        loadChildren: () => import('./components/book/book.module').then(m => m.BookModule),
+      },
+      {
+        path: 'post',
+        loadChildren: () => import('./components/post/post.module').then(m => m.PostModule),
+      },
+      {
+        path: '',
+        loadChildren: () => import('./components/content/content.module').then(m => m.ContentModule),
       }
     ]
   }
