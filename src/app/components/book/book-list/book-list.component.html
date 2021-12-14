@@ -1,0 +1,23 @@
+<h1 style="text-align: center">Book Manager</h1>
+<h3   >We have {{count}} book in DataBaste</h3>
+<button class="btn btn-primary" routerLink="create">Add book</button>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name Of Book</th>
+    <th scope="col">Author</th>
+    <th scope="col" colspan="2"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books;index as i">
+    <th scope="row">{{i +1}}</th>
+    <td><a routerLink="{{book.id}}/detail">{{book.title}}</a></td>
+    <td>{{book.author}}</td>
+    <td><button class="btn btn-danger" routerLink="{{book.id}}/delete">Delete</button></td>
+    <td><button class="btn btn-warning" routerLink="{{book.id}}/edit">Edit</button></td>
+  </tr>
+  </tbody>
+</table>
+

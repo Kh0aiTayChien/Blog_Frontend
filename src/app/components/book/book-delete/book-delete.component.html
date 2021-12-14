@@ -1,0 +1,23 @@
+<h1 style="text-align: center">Delete Book Infomation</h1>
+<div class="card">
+  <div class="card-header">
+    Confirm Infomation
+  </div>
+  <div class="card-body">
+    <span >
+      <label><b>Name of Book:</b></label>
+      <p>{{book.title}}</p>
+    </span>
+    <span>
+      <label><b>Author: </b></label>
+      <p>{{book.author}}</p>
+    </span>
+    <span>
+      <label><b>Describle:</b></label>
+      <p>{{book.description}}</p>
+    </span>
+    <button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button>
+    <button class="btn btn-secondary" routerLink="/book">Back To Manager</button>
+  </div>
+</div>
+
