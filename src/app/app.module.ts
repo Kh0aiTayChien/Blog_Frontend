@@ -19,6 +19,7 @@ import {RegisterComponent} from "./layout/login/register/register.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NzModalModule} from "ng-zorro-antd/modal";
 import {NzButtonModule} from "ng-zorro-antd/button";
+import { DashboardComponent } from './components/home/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,

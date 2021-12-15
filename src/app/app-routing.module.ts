@@ -9,14 +9,18 @@ const routes: Routes = [
     path: '',
     component: MasterComponent,
     children: [
+      // {
+      //   path: 'blogs',
+      //   loadChildren: () => import('./components/post/post.module').then(m => m.PostModule),
+      // },
       {
-        path: 'blogs',
-        loadChildren: () => import('./components/post/post.module').then(m => m.PostModule),
+        path: 'home',
+        loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule),
       },
-      {
-        path: '',
-        loadChildren: () => import('./components/content/content.module').then(m => m.ContentModule),
-      },
+      // {
+      //   path: '',
+      //   loadChildren: () => import('./components/content/content.module').then(m => m.ContentModule),
+      // },
     ],
   },
 
