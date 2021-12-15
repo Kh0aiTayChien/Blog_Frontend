@@ -1,20 +1,24 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {MasterComponent} from "./master/master.component";
+
 import {AdminMasterComponent} from "./admin/admin-master/admin-master.component";
+
+import {AuthenticationComponent} from "./layout/login/authentication/authentication.component";
+import {RegisterComponent} from "./layout/login/register/register.component";
 
 const routes: Routes = [
   {
-    path : '',
+    path: '',
     component: MasterComponent,
     children: [
+      // {
+      //   path: 'blogs',
+      //   loadChildren: () => import('./components/post/post.module').then(m => m.PostModule),
+      // },
       {
-        path: 'book',
-        loadChildren: () => import('./components/book/book.module').then(m => m.BookModule),
-      },
-      {
-        path: 'post',
-        loadChildren: () => import('./components/post/post.module').then(m => m.PostModule),
+        path: 'home',
+        loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule),
       },
       {
         path: '',
@@ -31,6 +35,16 @@ const routes: Routes = [
         loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
       }
     ]
+  },
+
+  {
+    path: 'login',
+    component: AuthenticationComponent
+  },
+
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 
 ];
@@ -39,4 +53,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
