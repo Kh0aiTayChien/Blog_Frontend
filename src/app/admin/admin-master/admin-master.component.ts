@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-admin-master',
-  templateUrl: './master.component.html',
-  styleUrls: ['./master.component.css']
+  templateUrl: './admin-master.component.html',
+  styleUrls: ['./admin-master.component.css']
 })
-export class MasterComponent implements OnInit {
+export class AdminMasterComponent implements OnInit {
 
   constructor() { }
 
