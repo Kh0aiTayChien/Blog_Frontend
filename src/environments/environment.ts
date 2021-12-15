@@ -4,11 +4,7 @@
 
 export const environment = {
   production: false,
-<<<<<<< HEAD
-  url_api: "http://127.0.0.1:8000/api/"
-=======
   API_URL: 'http://127.0.0.1:8000/api/'
->>>>>>> d83dd5062c6493f6b93ec7bf525a1efc2b23cbdf
 };
 
 /*
