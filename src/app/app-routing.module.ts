@@ -12,10 +12,6 @@ const routes: Routes = [
     path: '',
     component: MasterComponent,
     children: [
-      // {
-      //   path: 'blogs',
-      //   loadChildren: () => import('./components/post/post.module').then(m => m.PostModule),
-      // },
       {
         path: 'home',
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule),
@@ -31,7 +27,7 @@ const routes: Routes = [
     component: AdminMasterComponent,
     children: [
       {
-        path: 'user',
+        path: 'users',
         loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
       }
     ]

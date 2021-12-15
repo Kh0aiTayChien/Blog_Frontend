@@ -17,7 +17,7 @@ export class UserService {
       let header = {
         headers : new HttpHeaders().set("Authorization",`Breaker ${token}`)
       }
-      return this.http.get<any>(environment.url_api + 'user/posts',header)
+      return this.http.get<any>(environment.API_URL + 'user/posts',header)
   }
 
 
