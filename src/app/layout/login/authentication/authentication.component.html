@@ -40,7 +40,7 @@
             <div class="d-flex justify-content-between w-100 align-items-center">
               <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> <label class="form-check-label" for="flexCheckDefault"> Remember me </label> </div> <a class="text-decoration-none forgot-text" href="#">Forgot password?</a>
             </div>
-            <div class="signin-btn w-100 mt-2"> <button class="btn btn-danger btn-block">Signin</button> </div>
+            <div class="signin-btn w-100 mt-2"> <button class="btn btn-danger btn-block" [disabled]="!formLogin.valid">Signin</button> </div>
             <div class="signin-btn w-100 mt-2"><a routerLink="/register"><button class="btn btn-primary">Register</button> </a> </div>
           </div>
         </div>
