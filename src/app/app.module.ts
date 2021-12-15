@@ -8,6 +8,7 @@ import { MasterComponent } from './master/master.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
+import {AdminModule} from "./admin/admin.module";
 import {NzMenuModule} from "ng-zorro-antd/menu";
 import {NzToolTipModule} from "ng-zorro-antd/tooltip";
 import {NzIconModule} from "ng-zorro-antd/icon";
@@ -35,9 +36,6 @@ import { DashboardComponent } from './components/home/dashboard/dashboard.compon
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NzButtonModule,
-    NzModalModule,
-    BrowserAnimationsModule,
     NzMenuModule,
     NzToolTipModule,
     NzIconModule,
@@ -46,6 +44,11 @@ import { DashboardComponent } from './components/home/dashboard/dashboard.compon
     ReactiveFormsModule,
   ],
   providers: [],
+  exports: [
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent
+  ],
   bootstrap: [AppComponent]
 
 })
