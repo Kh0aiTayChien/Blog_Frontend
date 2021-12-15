@@ -11,7 +11,7 @@ import { PostCreateComponent } from './components/post/post-create/post-create.c
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthenticationComponent} from "./layout/login/authentication/authentication.component";
 import {RegisterComponent} from "./layout/login/register/register.component";
-// import { ContentComponent } from './components/content/content/content.component';
+
 @NgModule({
   declarations: [
     AppComponent,
