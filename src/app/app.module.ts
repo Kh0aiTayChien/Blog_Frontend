@@ -19,7 +19,9 @@ import {RegisterComponent} from "./layout/login/register/register.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NzModalModule} from "ng-zorro-antd/modal";
 import {NzButtonModule} from "ng-zorro-antd/button";
+import {NzNotificationModule} from "ng-zorro-antd/notification";
 import { DashboardComponent } from './components/home/dashboard/dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { DashboardComponent } from './components/home/dashboard/dashboard.compon
     SidebarComponent,
     PostCreateComponent,
     AuthenticationComponent,
-    RegisterComponent
+    RegisterComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { DashboardComponent } from './components/home/dashboard/dashboard.compon
     NzLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    NzNotificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
