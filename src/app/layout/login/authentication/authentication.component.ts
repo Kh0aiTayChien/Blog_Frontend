@@ -16,6 +16,7 @@ export class AuthenticationComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private loginService: LoginService,
               private router: Router,
+
               private notification: NzNotificationService) {
   }
 
@@ -28,22 +29,24 @@ export class AuthenticationComponent implements OnInit {
 
   login() {
     const data = this.formLogin?.value;
-    this.loginService.login(data).subscribe(
-      res => {
+    this.loginService.login(data).subscribe(res => {
       if (res.status === 'success'){
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', JSON.stringify(res.user));
+        localStorage.setItem('id', JSON.stringify(res.user.id));
         this.router.navigate(['home']);
-        alert('đăng nhập thành công');
-      }else {
-        this.notification
-          .blank(
-            'Notification Title',
-            'This is the content of the notification. This is the content of the notification. This is the content of the notification.'
-          )
-          .onClick.subscribe(() => {
-          console.log('notification clicked!');
-        });
+        alert("Đăng nhập thành công");
+      }else if(res.status === 'error'){
+        // this.notification
+        //   .blank(
+        //     'error Title',
+        //     'This is the content of the notification. This is the content of the notification. This is the content of the notification.'
+        //   )
+        //   .onClick.subscribe(() => {
+        //   console.log('notification clicked!');
+        // });
+        this.errLogin = res.message;
+
       }
     });
   }

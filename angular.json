@@ -1,7 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "e3330d76-7f70-4f2c-9306-fc87ac0c69c3"
+
+    "analytics": "77ef74ee-e697-4844-b261-7e01145dc855"
+
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -31,7 +33,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "src/assets/css/main.css"
             ],
             "scripts": []
           },
@@ -98,7 +101,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "src/assets/css/main.css"
             ],
             "scripts": []
           }
