@@ -12,6 +12,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
+import { AuthenticationComponent } from './layout/login/authentication/authentication.component';
+import { RegisterComponent } from './layout/login/register/register.component';
 // import { ContentComponent } from './components/content/content/content.component';
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PostCreateComponent } from './components/post/post-create/post-create.c
     FooterComponent,
     MasterComponent,
     SidebarComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    AuthenticationComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
