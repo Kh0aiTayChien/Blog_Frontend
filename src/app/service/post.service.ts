@@ -11,6 +11,6 @@ export class PostService {
   constructor(private httpClient: HttpClient) { }
 
   create(data: any) : Observable<any> {
-    return this.httpClient.post(environment.URL_API , data )
+    return this.httpClient.post(environment.API_URL , data )
   }
 }
