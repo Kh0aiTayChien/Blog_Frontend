@@ -12,6 +12,12 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
+import {NzMenuModule} from "ng-zorro-antd/menu";
+import {NzToolTipModule} from "ng-zorro-antd/tooltip";
+import {NzIconModule} from "ng-zorro-antd/icon";
+import {NzLayoutModule} from "ng-zorro-antd/layout";
+import {FormsModule} from "@angular/forms";
+
 // import { ContentComponent } from './components/content/content/content.component';
 @NgModule({
   declarations: [
@@ -28,7 +34,12 @@ import { PostCreateComponent } from './components/post/post-create/post-create.c
     HttpClientModule,
     NzButtonModule,
     NzModalModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NzMenuModule,
+    NzToolTipModule,
+    NzIconModule,
+    NzLayoutModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

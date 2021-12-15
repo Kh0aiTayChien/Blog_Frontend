@@ -10,22 +10,22 @@ export class BookService {
 
   constructor(private httpClient: HttpClient) {}
     getAll(): Observable<any>{
-    return this.httpClient.get(environment.url_api)
+    return this.httpClient.get(environment.URL_API)
 
   }
   getById(id:number): Observable<any> {
-    return this.httpClient.get(environment.url_api + id)
+    return this.httpClient.get(environment.URL_API + id)
   }
 
   destroy(id: number): Observable<any>  {
-    return this.httpClient.delete(environment.url_api  + id)
+    return this.httpClient.delete(environment.URL_API  + id)
   }
 
   create(data: any) : Observable<any> {
-    return this.httpClient.post(environment.url_api , data )
+    return this.httpClient.post(environment.URL_API , data )
   }
 
   edit(id: number, data: any): Observable<any> {
-    return this.httpClient.put(environment.url_api + id, data)
+    return this.httpClient.put(environment.URL_API + id, data)
   }
 }
