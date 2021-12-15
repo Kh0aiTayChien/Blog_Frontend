@@ -14,10 +14,12 @@ export class UserService {
 
   getPostByUser():Observable<any>{
       let token = localStorage.getItem('token')
+      console.log(token)
       let header = {
-        headers : new HttpHeaders().set("Authorization",`Breaker ${token}`)
+        headers : new HttpHeaders().set('Authorization',`Bearer ${token}` )
       }
-      return this.http.get<any>(environment.url_api + 'user/posts',header)
+      console.log(header)
+      return this.http.get<any>(environment.API_URL + 'users/posts',header)
   }
 
 
