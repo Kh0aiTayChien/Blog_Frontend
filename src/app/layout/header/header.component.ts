@@ -23,8 +23,13 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.logoutService.logout().subscribe(res => {
-      localStorage.removeItem('token');
-      this.router.navigate(['login']);
+      if (res.status === 'success'){
+        localStorage.removeItem('token');
+        this.router.navigate(['login']);
+        alert("Đăng xuất thành công");
+      }else {
+        alert("Không thể đăng xuất");
+      }
     });
   }
 }

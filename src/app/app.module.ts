@@ -16,16 +16,8 @@ import {FormsModule} from "@angular/forms";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthenticationComponent} from "./layout/login/authentication/authentication.component";
 import {RegisterComponent} from "./layout/login/register/register.component";
-<<<<<<< HEAD
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {NzModalModule} from "ng-zorro-antd/modal";
-import {NzButtonModule} from "ng-zorro-antd/button";
 import {NzNotificationModule} from "ng-zorro-antd/notification";
 import { DashboardComponent } from './components/home/dashboard/dashboard.component';
-=======
-import { NzNotificationModule } from 'ng-zorro-antd/notification';
->>>>>>> ec09b4206757d26a0d06acfb49a41fb3914be04f
-
 @NgModule({
   declarations: [
     AppComponent,

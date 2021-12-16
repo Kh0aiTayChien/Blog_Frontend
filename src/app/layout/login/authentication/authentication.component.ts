@@ -16,7 +16,6 @@ export class AuthenticationComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private loginService: LoginService,
               private router: Router,
-
               private notification: NzNotificationService) {
   }
 
