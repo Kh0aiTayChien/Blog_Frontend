@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  gridStyle = {
+    width: '50%',
+    textAlign: 'center'
+  };
   constructor() { }
 
   ngOnInit(): void {

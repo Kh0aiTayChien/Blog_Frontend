@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {NzCardModule} from "ng-zorro-antd/card";
 
 const routes: Routes = [
   {
@@ -13,10 +14,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [DashboardComponent],
-  imports: [
-    CommonModule,
-    [RouterModule.forChild(routes)],
-  ]
+    imports: [
+        CommonModule,
+        [RouterModule.forChild(routes)],
+        NzCardModule,
+    ]
 })
 export class HomeModule {
 }
