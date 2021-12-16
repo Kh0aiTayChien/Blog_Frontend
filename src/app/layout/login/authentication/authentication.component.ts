@@ -29,7 +29,7 @@ export class AuthenticationComponent implements OnInit {
     this.loginService.login(data).subscribe(res => {
       console.log(res);
       localStorage.setItem('token', res.token);
-      this.router.navigate(['home']);
+      this.router.navigate(['']);
     });
   }
 }

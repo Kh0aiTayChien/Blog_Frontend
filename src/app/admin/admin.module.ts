@@ -10,6 +10,7 @@ import {HomeComponent} from './home/home.component';
 import {PostListComponent} from './post/post-list/post-list.component';
 import {UserListComponent} from './user/user-list/user-list.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
+import {NzButtonModule} from "ng-zorro-antd/button";
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    NzButtonModule,
     [RouterModule.forChild(routes)],
   ]
 })

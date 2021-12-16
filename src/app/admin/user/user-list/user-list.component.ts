@@ -25,8 +25,12 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(id: any) {
-    this.adminService.delete(id).subscribe(res => {
-      this.getAllUsers();
+    if (confirm('Ban co chac khong?')) {
+      this.adminService.delete(id).subscribe(res => {
+        this.getAllUsers();
+        alert('Xoa thanh cong');
+      });
+    }
       // this.notification
       //   .blank(
       //     'Xoá người dùng thành công',
@@ -39,6 +43,7 @@ export class UserListComponent implements OnInit {
       //   )
       //   .onClick.subscribe(() => {
       //   console.log('notification clicked!');
-    });
+      // });
+
   }
 }
