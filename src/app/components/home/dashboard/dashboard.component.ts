@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   gridStyle = {
     width: '50%',
+    textAlign: 'left'
+  };
+  first_gridStyle = {
+    width: '100%',
     textAlign: 'center'
   };
   constructor() { }
