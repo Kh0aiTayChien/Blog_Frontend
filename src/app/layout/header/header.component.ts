@@ -13,7 +13,9 @@ export class HeaderComponent implements OnInit {
   isAccountLogin= false;
   constructor(private logoutService: LoginService,
               private router: Router,
-              private authService: AuthService) { }
+              private authService: AuthService) {
+    console.log("123",this.isAccountLogin)
+  }
 
   ngOnInit(): void {
     this.isAccountLogin = this.authService.checkLogin();
@@ -21,8 +23,13 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.logoutService.logout().subscribe(res => {
-      localStorage.removeItem('token');
-      this.router.navigate(['login']);
+      if (res.status === 'success'){
+        localStorage.removeItem('token');
+        this.router.navigate(['login']);
+        alert("Đăng xuất thành công");
+      }else {
+        alert("Không thể đăng xuất");
+      }
     });
   }
 }

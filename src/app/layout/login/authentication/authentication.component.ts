@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {LoginService} from "../../../service/login.service";
@@ -13,15 +13,15 @@ export class AuthenticationComponent implements OnInit {
   formLogin: any;
   errLogin: any;
 
-
   constructor(private fb: FormBuilder,
               private loginService: LoginService,
               private router: Router,
-              private notification: NzNotificationService) { }
+              private notification: NzNotificationService) {
+  }
 
   ngOnInit(): void {
     this.formLogin = this.fb.group({
-      email: ['', [Validators.required , Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });
   }
@@ -45,6 +45,7 @@ export class AuthenticationComponent implements OnInit {
         //   console.log('notification clicked!');
         // });
         this.errLogin = res.message;
+
       }
     });
   }

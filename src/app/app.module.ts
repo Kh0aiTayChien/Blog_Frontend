@@ -16,8 +16,8 @@ import {FormsModule} from "@angular/forms";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthenticationComponent} from "./layout/login/authentication/authentication.component";
 import {RegisterComponent} from "./layout/login/register/register.component";
-import { NzNotificationModule } from 'ng-zorro-antd/notification';
-
+import {NzNotificationModule} from "ng-zorro-antd/notification";
+import { DashboardComponent } from './components/home/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,8 @@ import { NzNotificationModule } from 'ng-zorro-antd/notification';
     SidebarComponent,
     PostCreateComponent,
     AuthenticationComponent,
-    RegisterComponent
+    RegisterComponent,
+
   ],
   imports: [
     BrowserModule,
