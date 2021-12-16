@@ -45,7 +45,6 @@ export class AuthenticationComponent implements OnInit {
         //   console.log('notification clicked!');
         // });
         this.errLogin = res.message;
-
       }
     });
   }
