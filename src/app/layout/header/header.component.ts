@@ -25,10 +25,11 @@ export class HeaderComponent implements OnInit {
     this.logoutService.logout().subscribe(res => {
       localStorage.removeItem('token');
       this.router.navigate(['login']);
+
       this.notification
         .blank(
-          'Notification Title',
-          'This is the content of the notification. This is the content of the notification. This is the content of the notification.'
+          'Đăng xuất thành công',
+          'Hẹn gặp lại bạn lần tới',
         )
         .onClick.subscribe(() => {
         console.log('notification clicked!');
