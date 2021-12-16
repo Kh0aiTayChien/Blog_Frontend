@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../../service/login.service";
 import {Router} from "@angular/router";
 import {AuthService} from "../../service/auth.service";
+import {NzNotificationService} from "ng-zorro-antd/notification";
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
   isAccountLogin= false;
   constructor(private logoutService: LoginService,
               private router: Router,
-              private authService: AuthService) { }
+              private authService: AuthService,
+              private notification: NzNotificationService) {}
 
   ngOnInit(): void {
     this.isAccountLogin = this.authService.checkLogin();
@@ -23,6 +25,14 @@ export class HeaderComponent implements OnInit {
     this.logoutService.logout().subscribe(res => {
       localStorage.removeItem('token');
       this.router.navigate(['login']);
+      this.notification
+        .blank(
+          'Notification Title',
+          'This is the content of the notification. This is the content of the notification. This is the content of the notification.'
+        )
+        .onClick.subscribe(() => {
+        console.log('notification clicked!');
+      });
     });
   }
 }
