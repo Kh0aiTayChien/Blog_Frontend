@@ -4131,6 +4131,13 @@
     "date-fns" "^2.10.0"
     "tslib" "^2.2.0"
 
+"ngx-toastr@^14.2.1":
+  "integrity" "sha512-1Kq//y8tTgglUYKHIziZwpo4R7fe4/neidcxfbAXzXtcViSjT4Z21Vgqn/inoBlwoc7E9qXQDuZoJr2lanCgGA=="
+  "resolved" "https://registry.npmjs.org/ngx-toastr/-/ngx-toastr-14.2.1.tgz"
+  "version" "14.2.1"
+  dependencies:
+    "tslib" "^2.3.0"
+
 "nice-napi@^1.0.2":
   "integrity" "sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA=="
   "resolved" "https://registry.npmjs.org/nice-napi/-/nice-napi-1.0.2.tgz"

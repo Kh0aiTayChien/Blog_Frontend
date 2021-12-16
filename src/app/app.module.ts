@@ -19,6 +19,8 @@ import {RegisterComponent} from "./layout/login/register/register.component";
 import {NzNotificationModule} from "ng-zorro-antd/notification";
 import { DashboardComponent } from './components/home/dashboard/dashboard.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     FormsModule,
     ReactiveFormsModule,
     NzNotificationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   exports: [
