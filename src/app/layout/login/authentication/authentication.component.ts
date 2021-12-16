@@ -29,8 +29,6 @@ export class AuthenticationComponent implements OnInit {
   login() {
     const data = this.formLogin?.value;
     this.loginService.login(data).subscribe(res => {
-      localStorage.setItem('token', res.token);
-      this.router.navigate(['']);
       if (res.status === 'success'){
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', JSON.stringify(res.user));
