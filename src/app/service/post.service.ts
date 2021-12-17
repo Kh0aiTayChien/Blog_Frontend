@@ -13,4 +13,8 @@ export class PostService {
   create(data: any) : Observable<any> {
     return this.httpClient.post(environment.API_URL , data )
   }
+
+  showPublic(): Observable<any> {
+    return this.httpClient.get(environment.API_URL + 'ppl')
+  }
 }
