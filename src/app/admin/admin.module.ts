@@ -11,6 +11,8 @@ import {PostListComponent} from './post/post-list/post-list.component';
 import {UserListComponent} from './user/user-list/user-list.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {NzButtonModule} from "ng-zorro-antd/button";
+import { CreatePostComponent } from './user/create-post/create-post.component';
+
 
 const routes: Routes = [
   {
@@ -28,6 +30,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: UserProfileComponent
+  },
+  {
+    path: 'create/post',
+    component: CreatePostComponent
   }
 ]
 
@@ -41,7 +47,8 @@ const routes: Routes = [
     HomeComponent,
     PostListComponent,
     UserListComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    CreatePostComponent
 
   ],
   imports: [
@@ -49,6 +56,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     NzButtonModule,
     [RouterModule.forChild(routes)],
+
   ]
 })
 export class AdminModule {
