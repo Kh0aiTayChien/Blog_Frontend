@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PostService} from "../../../service/post.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  posts: any[] = [];
+
   gridStyle = {
     width: '50%',
     textAlign: 'left'
@@ -14,9 +18,17 @@ export class DashboardComponent implements OnInit {
     width: '100%',
     textAlign: 'center'
   };
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    this.showPostPublic();
+  }
+
+  showPostPublic() {
+    this.postService.showPublic().subscribe(res => {
+      console.log(res)
+      this.posts = res;
+    })
   }
 
 }
