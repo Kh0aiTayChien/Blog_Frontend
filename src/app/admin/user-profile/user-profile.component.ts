@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../service/user.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -14,6 +16,7 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private userService: UserService,
     private fb: FormBuilder,
+    private toastr: ToastrService
   ) {
   }
 
@@ -35,6 +38,7 @@ export class UserProfileComponent implements OnInit {
     console.log(data)
     this.userService.editProfileUser(data).subscribe(res => {
       console.log(res)
+      this.toastr.success('Cập nhật thành công!', 'Trạng thái');
     })
 
   }
