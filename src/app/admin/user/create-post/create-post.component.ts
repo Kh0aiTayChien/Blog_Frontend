@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AngularFireAuthGuard} from "@angular/fire/compat/auth-guard";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
 import {finalize, Observable} from "rxjs";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-create-post',
@@ -20,7 +21,8 @@ export class CreatePostComponent implements OnInit {
 
   constructor(private userService: UserService,
               private fb: FormBuilder,
-              private storage: AngularFireStorage
+              private storage: AngularFireStorage,
+              private toastr: ToastrService
   ) {
   }
 
@@ -49,6 +51,7 @@ export class CreatePostComponent implements OnInit {
       data.image = url
       this.userService.createPost(data).subscribe(res => {
         console.log(res)
+        this.toastr.success('Tạo mới bài viết thành công', 'Trạng thái');
       })
     })
 
