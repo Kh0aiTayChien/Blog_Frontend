@@ -7,11 +7,21 @@ import {NzNotificationService} from "ng-zorro-antd/notification";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  styles: [
+    `
+      [nz-button] {
+        margin-right: 8px;
+        margin-bottom: 12px;
+      }
+    `
+  ]
 })
-export class HeaderComponent implements OnInit {
 
+export class HeaderComponent implements OnInit {
+  name?: string;
   isAccountLogin= false;
+
   constructor(private logoutService: LoginService,
               private router: Router,
               private authService: AuthService,
@@ -19,6 +29,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.isAccountLogin = this.authService.checkLogin();
+    let user = JSON.parse(<string>localStorage.getItem('user'))
+    this.name = user.name
   }
 
   logout() {

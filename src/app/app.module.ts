@@ -24,6 +24,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
+import {NzButtonModule} from "ng-zorro-antd/button";
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,23 +37,24 @@ import {environment} from "../environments/environment";
     RegisterComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NzMenuModule,
-    NzToolTipModule,
-    NzIconModule,
-    NzLayoutModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NzNotificationModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
-    NzMessageModule,
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        NzMenuModule,
+        NzToolTipModule,
+        NzIconModule,
+        NzLayoutModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NzNotificationModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(),
+        NzMessageModule,
+        AngularFireStorageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+        NzButtonModule
+    ],
   providers: [],
   exports: [
     HeaderComponent,
