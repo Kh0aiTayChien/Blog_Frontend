@@ -18,6 +18,12 @@ import {AuthenticationComponent} from "./layout/login/authentication/authenticat
 import {RegisterComponent} from "./layout/login/register/register.component";
 import {NzNotificationModule} from "ng-zorro-antd/notification";
 import { DashboardComponent } from './components/home/dashboard/dashboard.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +46,12 @@ import { DashboardComponent } from './components/home/dashboard/dashboard.compon
     NzLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    NzNotificationModule
+    NzNotificationModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    NzMessageModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
   providers: [],
   exports: [

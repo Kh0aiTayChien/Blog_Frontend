@@ -29,23 +29,29 @@ export class AuthenticationComponent implements OnInit {
   login() {
     const data = this.formLogin?.value;
     this.loginService.login(data).subscribe(res => {
-      if (res.status === 'success'){
+      if (res.status === 'success') {
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', JSON.stringify(res.user));
         localStorage.setItem('id', JSON.stringify(res.user.id));
-        this.router.navigate(['home']);
-        alert("Đăng nhập thành công");
-      }else if(res.status === 'error'){
-        // this.notification
-        //   .blank(
-        //     'error Title',
-        //     'This is the content of the notification. This is the content of the notification. This is the content of the notification.'
-        //   )
-        //   .onClick.subscribe(() => {
-        //   console.log('notification clicked!');
-        // });
+        this.router.navigate(['']);
+        this.notification
+          .blank(
+            'Đăng nhập thành công',
+            'Chào mừng bạn đên với trang Blog'
+          )
+          .onClick.subscribe(() => {
+          console.log('notification clicked!');
+        });
+      } else if (res.status === 'error') {
+        this.notification
+          .blank(
+            'Đăng nhập thất bại',
+            'Vui lòng nhập lại',
+          )
+          .onClick.subscribe(() => {
+          console.log('notification clicked!');
+        });
         this.errLogin = res.message;
-
       }
     });
   }

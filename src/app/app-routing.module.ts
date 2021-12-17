@@ -13,13 +13,13 @@ const routes: Routes = [
     component: MasterComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule),
       },
-      {
-        path: '',
-        loadChildren: () => import('./components/content/content.module').then(m => m.ContentModule),
-      },
+      // {
+      //   path: '',
+      //   loadChildren: () => import('./components/content/content.module').then(m => m.ContentModule),
+      // },
     ]
   },
   {

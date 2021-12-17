@@ -29,7 +29,7 @@
       </div>
       <div class="col-md-6">
         <div class="bg-white p-4 h-100">
-          <div class="p-3 d-flex justify-content-center flex-column align-items-center"><span class="main-heading">Signin To Cever</span>
+          <div class="p-3 d-flex justify-content-center flex-column align-items-center"><span class="main-heading">Đăng nhập</span>
             <div class="alert alert-danger w-100" *ngIf="errLogin">
               {{errLogin}}
             </div>
@@ -38,7 +38,7 @@
               <li><i class="fa fa-google"></i></li>
               <li><i class="fa fa-linkedin"></i></li>
             </ul>
-            <div class="form-data"><label>Email</label> <input type="email" formControlName="email"
+            <div class="form-data"><label>Email1</label> <input type="email" formControlName="email"
                                                                class="form-control w-100"></div>
             <div class="form-data"><label>Password</label> <input type="password" formControlName="password"
                                                                   class="form-control w-100"></div>
@@ -48,11 +48,11 @@
               <a class="text-decoration-none forgot-text" href="#">Forgot password?</a>
             </div>
             <div class="signin-btn w-100 mt-2">
-              <button class="btn btn-danger btn-block" [disabled]="!formLogin.valid">Signin</button>
+              <button class="btn btn-danger btn-block" [disabled]="!formLogin.valid">Đăng nhập</button>
             </div>
 
             <div class="signin-btn w-100 mt-2"><a routerLink="/register">
-              <button class="btn btn-primary">Register</button>
+              <button class="btn btn-primary">Đăng ký</button>
             </a></div>
           </div>
         </div>

@@ -21,5 +21,37 @@ export class UserService {
     console.log(header)
     return this.http.get<any>(environment.API_URL + 'users/posts', header)
   }
+  editProfileUser(data : any): Observable<any> {
+    let token = localStorage.getItem('token')
+    console.log(token)
+    let header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }
+    return this.http.put<any>(environment.API_URL + 'users/edit' , data , header)
+  }
+  getById(): Observable<any>{
+    let token = localStorage.getItem('token')
+    console.log(token)
+    let header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }
+    return this.http.get<any>(environment.API_URL + 'users/getById',header)
+  }
+  createPost(data : any): Observable<any>{
+    let token = localStorage.getItem('token')
+    console.log(token)
+    let header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }
+    return this.http.post<any>(environment.API_URL + 'users/create/post',data,header)
+  }
+  getCategories(): Observable<any>{
+    let token = localStorage.getItem('token')
+    console.log(token)
+    let header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }
+    return this.http.get<any>(environment.API_URL + 'users/getCategories',header)
+  }
 
 }
