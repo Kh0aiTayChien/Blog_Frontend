@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit , TemplateRef } from '@angular/core';
 import {LoginService} from "../../../service/login.service";
 import {Router} from "@angular/router";
 import {FormBuilder, Validators} from "@angular/forms";
+
+import {NzNotificationService} from "ng-zorro-antd/notification";
 
 @Component({
   selector: 'app-register',
@@ -10,10 +12,12 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class RegisterComponent implements OnInit {
   formRegister: any;
-
+  errRegister:any;
   constructor(private registerServive: LoginService,
               private router: Router,
-              private fb:FormBuilder) { }
+              private fb: FormBuilder,
+              private notification: NzNotificationService) {
+  }
 
   ngOnInit(): void {
     this.formRegister = this.fb.group({
@@ -23,11 +27,15 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  register() {
+  register(template: TemplateRef<{}>): void {
     let data = this.formRegister?.value;
-    console.log(data);
-    this.registerServive.register(data).subscribe(res =>{
+    this.registerServive.register(data).subscribe(res => {
       this.router.navigate(['login']);
+      this.notification.template(template);
+    },error => {
+      //
+      let message = 'Tài khoản này đã tồn tại'
+      this.errRegister = message;
     })
   }
 }
