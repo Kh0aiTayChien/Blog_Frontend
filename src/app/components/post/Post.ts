@@ -9,4 +9,5 @@ export class Post {
   access_modifier?: Boolean;
   user_id?: string;
   views?: number;
+  user?: number
 }

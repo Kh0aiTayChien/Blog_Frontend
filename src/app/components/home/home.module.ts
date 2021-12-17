@@ -14,11 +14,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [DashboardComponent],
-    imports: [
-        CommonModule,
-        [RouterModule.forChild(routes)],
-        NzCardModule,
-    ]
+  imports: [
+    CommonModule,
+    [RouterModule.forChild(routes)],
+    NzCardModule,
+  ]
 })
 export class HomeModule {
 }
