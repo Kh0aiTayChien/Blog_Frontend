@@ -70,7 +70,7 @@
               <h5 class="card-title">{{post.title}}</h5>
               <p class="card-text">{{post.desc | slice:0:20}}...</p>
               <a href="#" class="card-link">{{ post.user.name}}</a>
-              <a href="#" class="card-link">Đọc tiếp</a>
+              <button [routerLink]="['/detail',post.id]" class="btn btn-dark">Đọc tiếp</button>
             </div>
           </div>
         </div>

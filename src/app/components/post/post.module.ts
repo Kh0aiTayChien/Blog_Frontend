@@ -8,6 +8,7 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostShowComponent } from './post-show/post-show.component';
 import {PostCreateComponent} from "./post-create/post-create.component";
 import {NzCardModule} from "ng-zorro-antd/card";
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   {
     path: ":id/delete",
     component: PostDeleteComponent
-  }
+  },
+
 ]
 
 @NgModule({
@@ -37,7 +39,8 @@ const routes: Routes = [
     PostDeleteComponent,
     PostEditComponent,
     PostListComponent,
-    PostShowComponent
+    PostShowComponent,
+    PostDetailComponent
   ],
   imports: [
     CommonModule,

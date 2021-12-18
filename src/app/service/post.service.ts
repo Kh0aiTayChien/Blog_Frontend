@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 
@@ -16,5 +16,13 @@ export class PostService {
 
   showPublic(): Observable<any> {
     return this.httpClient.get(environment.API_URL + 'ppl')
+  }
+  showDetailPost(id : any): Observable<any> {
+    let token = localStorage.getItem('token')
+    console.log(token)
+    let header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }
+    return this.httpClient.get(environment.API_URL + `detail/${id}` + header )
   }
 }
