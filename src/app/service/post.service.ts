@@ -23,6 +23,6 @@ export class PostService {
     let header = {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }
-    return this.httpClient.get(environment.API_URL + `detail/${id}` + header )
+    return this.httpClient.get(environment.API_URL + `posts/detail/${id}`, header )
   }
 }

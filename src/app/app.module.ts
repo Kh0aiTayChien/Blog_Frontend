@@ -24,6 +24,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
+import * as moment from "moment";
 @NgModule({
   declarations: [
     AppComponent,
