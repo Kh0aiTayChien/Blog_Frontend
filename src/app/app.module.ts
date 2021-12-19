@@ -27,6 +27,7 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 // @ts-ignore
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
+import * as moment from "moment";
 @NgModule({
   declarations: [
     AppComponent,
