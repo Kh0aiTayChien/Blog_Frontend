@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AdminService} from "../../../service/admin.service";
+import {NzNotificationService} from "ng-zorro-antd/notification";
 
 @Component({
   selector: 'app-user-list',
@@ -10,7 +11,8 @@ export class UserListComponent implements OnInit {
 
   users: any[] = [];
 
-  constructor(private adminService: AdminService) {
+  constructor(private adminService: AdminService,
+              private notification: NzNotificationService) {
   }
 
   ngOnInit(): void {
@@ -25,25 +27,22 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(id: any) {
-    if (confirm('Ban co chac khong?')) {
       this.adminService.delete(id).subscribe(res => {
+        this.notification
+          .blank(
+            'Xoá người dùng thành công',
+            'Vui lòng chờ hoặc bấm vào biểu tượng x để đóng hộp thông báo',
+            {
+              nzStyle: {
+                color: 'green'
+              }
+            }
+          )
+          .onClick.subscribe(() => {
+            console.log('notification clicked!');
+          });
         this.getAllUsers();
-        alert('Xoa thanh cong');
       });
     }
-      // this.notification
-      //   .blank(
-      //     'Xoá người dùng thành công',
-      //     'Vui lòng chờ hoặc bấm vào biểu tượng x để đóng hộp thông báo',
-      //     {
-      //       nzStyle: {
-      //         color: 'green'
-      //       }
-      //     }
-      //   )
-      //   .onClick.subscribe(() => {
-      //   console.log('notification clicked!');
-      // });
 
-  }
 }
