@@ -21,10 +21,10 @@
           <div *ngFor="let post of posts" class="col-md-4">
             <div class="main-card mb-3 card">
 <!--              <img width="100%" src="{{post.image}}" alt="Card image cap" class="card-img-top">-->
-              <div class="card-body"><h5 class="card-title">{{post.title}}</h5><h6>{{post.created_at}}</h6>
+              <div class="card-body"><h5 class="card-title">{{post.title}}</h5><h6>{{posts.created_at}}</h6>
                 "{{post.desc | slice:0:50}}"
                 <div>
-                <button class="btn btn-secondary">Chi tiết</button>
+                <button [routerLink]="['/detail',post.id]" class="btn btn-secondary">Chi tiết</button>
                 </div>
               </div>
             </div>
