@@ -27,7 +27,11 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 // @ts-ignore
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
-import * as moment from "moment";
+
+import {ChangepasswordComponent} from "./layout/login/changepassword/changepassword.component";
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +42,7 @@ import * as moment from "moment";
     PostCreateComponent,
     AuthenticationComponent,
     RegisterComponent,
+    ChangepasswordComponent
 
   ],
   imports: [
@@ -62,7 +67,6 @@ import * as moment from "moment";
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-
   ],
   bootstrap: [AppComponent]
 
