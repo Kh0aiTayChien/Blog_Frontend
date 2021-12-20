@@ -25,4 +25,12 @@ export class PostService {
     }
     return this.httpClient.get(environment.API_URL + `posts/detail/${id}`, header )
   }
+  deletePost(id : any): Observable<any>{
+    let token = localStorage.getItem('token')
+    console.log(token)
+    let header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }
+    return this.httpClient.delete(environment.API_URL + `users/delete/${id}`, header )
+  }
 }
