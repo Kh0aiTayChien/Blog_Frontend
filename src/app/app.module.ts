@@ -19,11 +19,15 @@ import {RegisterComponent} from "./layout/login/register/register.component";
 import {NzNotificationModule} from "ng-zorro-antd/notification";
 import { DashboardComponent } from './components/home/dashboard/dashboard.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+// @ts-ignore
 import {ToastrModule} from "ngx-toastr";
 import { NzMessageModule } from 'ng-zorro-antd/message';
+// @ts-ignore
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+// @ts-ignore
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
+import * as moment from "moment";
 @NgModule({
   declarations: [
     AppComponent,
