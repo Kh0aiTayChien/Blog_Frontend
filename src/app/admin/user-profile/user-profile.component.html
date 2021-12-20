@@ -1,7 +1,18 @@
 <div class="container rounded bg-white mt-5 mb-5">
+
   <div class="row">
     <div class="col-md-3 border-right">
-      <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/O1RmJXT.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">{{users.email}}</span><span>{{users.address}}</span></div>
+      <form>
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        <img class="rounded-circle mt-5"  src="{{users.image}}" width="200" height="200">
+        <div class="position-relative row form-group">
+          <div class="col-sm-10">
+            <input name="image"  id="file" type="file" (change)="onFileSelected($event)" autocomplete="off" class="form-control-file">
+          </div>
+        </div>
+        <button class="text-center" type="submit" (click)="uploadImage()">Up ảnh</button>
+      </div>
+      </form>
     </div>
     <div class="col-md-5 border-right">
       <div class="p-3 py-5">
@@ -19,10 +30,11 @@
           <div class="col-md-12"><label class="labels">Địa chỉ</label><input type="text" class="form-control" formControlName="address"></div>
         </div>
         <div class="mt-5 text-center">
-          <button class="form-group" type="submit">Cập nhật</button>
+          <button class="btn btn-dark" type="submit">Cập nhật</button>
         </div>
         </form>
       </div>
     </div>
   </div>
+
 </div>
