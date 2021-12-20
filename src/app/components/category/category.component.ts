@@ -24,6 +24,7 @@ export class CategoryComponent implements OnInit {
   getPostByCate(id: any){
     this.categoryService.getPostByCategory(id).subscribe(res => {
       this.posts = res;
+      console.log(this.posts)
     })
   }
 }
