@@ -9878,7 +9878,7 @@ a.text-alternate:hover, a.text-alternate:focus {
 }
 
 .text-hide {
-  font: 0/0 a;
+  /*font: 0/0 a;*/
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -9982,7 +9982,7 @@ a, button, .btn {
 .app-header__logo .logo-src {
   height: 23px;
   width: 97px;
-  background: url(assets/images/logo-inverse.png)
+  /*background: url(assets/images/logo-inverse.png)*/
 }
 
 .app-header__menu, .app-header__mobile-menu {
@@ -10090,7 +10090,7 @@ a, button, .btn {
 }
 
 .app-header.header-text-light .app-header__logo .logo-src {
-  background: url(assets/images/logo.png)
+  /*background: url(assets/images/logo.png)*/
 }
 
 .app-header.header-text-light .app-header__mobile-menu .hamburger-inner, .app-header.header-text-light .app-header__mobile-menu .hamburger-inner::before, .app-header.header-text-light .app-header__mobile-menu .hamburger-inner::after {
@@ -10172,9 +10172,9 @@ a, button, .btn {
   background: rgba(0, 0, 0, 0.8)
 }
 
-.app-header.header-text-dark .app-header__logo .logo-src {
-  background: url(assets/images/logo-inverse.png)
-}
+/*.app-header.header-text-dark .app-header__logo .logo-src {*/
+/*  background: url(assets/images/logo-inverse.png)*/
+/*}*/
 
 .app-sidebar {
   width: 280px;
@@ -10450,9 +10450,9 @@ a, button, .btn {
   background: rgba(255, 255, 255, 0.2)
 }
 
-.app-sidebar.sidebar-text-light .app-header__logo .logo-src {
-  background: url(assets/images/logo.png)
-}
+/*.app-sidebar.sidebar-text-light .app-header__logo .logo-src {*/
+/*  background: url(assets/images/logo.png)*/
+/*}*/
 
 .app-sidebar.sidebar-text-light .app-header__logo .hamburger-inner, .app-sidebar.sidebar-text-light .app-header__logo .hamburger-inner::before, .app-sidebar.sidebar-text-light .app-header__logo .hamburger-inner::after {
   background-color: rgba(255, 255, 255, 0.8)
@@ -11237,7 +11237,7 @@ a, button, .btn {
 .icon-gradient {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /*background-clip: text;*/
   text-fill-color: transparent
 }
 
@@ -13829,7 +13829,7 @@ body {
   }
   100% {
     opacity: 0;
-    -webkit-transform: scale3d(0.1) translate3d(-2000px, 0, 0);
+    /*-webkit-transform: scale3d(0.1) translate3d(-2000px, 0, 0);*/
     -webkit-transform-origin: left center
   }
 }
@@ -13841,7 +13841,7 @@ body {
   }
   100% {
     opacity: 0;
-    transform: scale3d(0.1) translate3d(-2000px, 0, 0);
+    /*transform: scale3d(0.1) translate3d(-2000px, 0, 0);*/
     transform-origin: left center
   }
 }
@@ -13858,7 +13858,7 @@ body {
   }
   100% {
     opacity: 0;
-    -webkit-transform: scale3d(0.1) translate3d(2000px, 0, 0);
+    /*-webkit-transform: scale3d(0.1) translate3d(2000px, 0, 0);*/
     -webkit-transform-origin: right center
   }
 }
@@ -13870,7 +13870,7 @@ body {
   }
   100% {
     opacity: 0;
-    transform: scale3d(0.1) translate3d(2000px, 0, 0);
+    /*transform: scale3d(0.1) translate3d(2000px, 0, 0);*/
     transform-origin: right center
   }
 }
@@ -15357,8 +15357,8 @@ legend {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 900;
-  src: url(assets/fonts/fa-solid-900.eot);
-  src: url(assets/fonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(assets/fonts/fa-solid-900.woff2) format("woff2"), url(assets/fonts/fa-solid-900.woff) format("woff"), url(assets/fonts/fa-solid-900.ttf) format("truetype"), url(assets/fonts/fa-solid-900.svg#fontawesome) format("svg")
+  /*src: url(assets/fonts/fa-solid-900.eot);*/
+  /*src: url(assets/fonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(assets/fonts/fa-solid-900.woff2) format("woff2"), url(assets/fonts/fa-solid-900.woff) format("woff"), url(assets/fonts/fa-solid-900.ttf) format("truetype"), url(assets/fonts/fa-solid-900.svg#fontawesome) format("svg")*/
 }
 
 .fa, .fas {
@@ -20900,8 +20900,8 @@ legend {
 
 @font-face {
   font-family: 'Pe-icon-7-stroke';
-  src: url(assets/fonts/Pe-icon-7-stroke.eot);
-  src: url(assets/fonts/Pe-icon-7-stroke.eot?#iefixd7yf1v) format("embedded-opentype"), url(assets/fonts/Pe-icon-7-stroke.woff) format("woff"), url(assets/fonts/Pe-icon-7-stroke.ttf) format("truetype"), url(assets/fonts/Pe-icon-7-stroke.svg#Pe-icon-7-stroke) format("svg");
+  /*src: url(assets/fonts/Pe-icon-7-stroke.eot);*/
+  /*src: url(assets/fonts/Pe-icon-7-stroke.eot?#iefixd7yf1v) format("embedded-opentype"), url(assets/fonts/Pe-icon-7-stroke.woff) format("woff"), url(assets/fonts/Pe-icon-7-stroke.ttf) format("truetype"), url(assets/fonts/Pe-icon-7-stroke.svg#Pe-icon-7-stroke) format("svg");*/
   font-weight: normal;
   font-style: normal
 }
