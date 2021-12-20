@@ -10,6 +10,8 @@ import {en_US, NzI18nService, vi_VN} from "ng-zorro-antd/i18n";
 })
 export class DashboardComponent implements OnInit {
 
+  defaultImage =" https://www.w3schools.com/tags/img_girl.jpg";
+
   posts: any[] = [];
 
   category: any[] = [];
