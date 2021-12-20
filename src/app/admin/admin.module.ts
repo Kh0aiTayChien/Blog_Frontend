@@ -12,6 +12,7 @@ import {UserListComponent} from './user/user-list/user-list.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {NzButtonModule} from "ng-zorro-antd/button";
 import { CreatePostComponent } from './user/create-post/create-post.component';
+import { PostEditComponent } from './post/post-edit/post-edit.component';
 
 
 const routes: Routes = [
@@ -34,7 +35,16 @@ const routes: Routes = [
   {
     path: 'create/post',
     component: CreatePostComponent
+  },
+  {
+    path: 'delete/:id',
+    component: PostListComponent
+  },
+  {
+    path: 'edit/:id',
+    component: PostEditComponent
   }
+
 ]
 
 
@@ -48,7 +58,8 @@ const routes: Routes = [
     PostListComponent,
     UserListComponent,
     UserProfileComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    PostEditComponent
 
   ],
     imports: [
