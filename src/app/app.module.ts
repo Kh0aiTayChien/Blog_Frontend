@@ -24,6 +24,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
+import {ChangepasswordComponent} from "./layout/login/changepassword/changepassword.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import {environment} from "../environments/environment";
     PostCreateComponent,
     AuthenticationComponent,
     RegisterComponent,
+    ChangepasswordComponent
 
   ],
   imports: [
@@ -58,7 +60,6 @@ import {environment} from "../environments/environment";
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-
   ],
   bootstrap: [AppComponent]
 
