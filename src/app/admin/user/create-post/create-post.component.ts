@@ -41,7 +41,7 @@ export class CreatePostComponent implements OnInit {
       'image': [this.fb1],
       'desc': ['', [Validators.required]],
       'access_modifier': ['', [Validators.required]],
-      'category_id': ['']
+      'category_id': ['',Validators.required]
     })
 
   }
@@ -84,5 +84,21 @@ export class CreatePostComponent implements OnInit {
         }
       });
   }
+  get title2(){
+    return this.formCreatePost?.get('title')
+  }
+   get content(){
+    return this.formCreatePost?.get('_content')
+  }
+   get desc(){
+    return this.formCreatePost?.get('desc')
+  }
+   get accessModifier(){
+    return this.formCreatePost?.get('access_modifier')
+  }
+  get category(){
+    return this.formCreatePost?.get('category_id')
+  }
+
 
 }
