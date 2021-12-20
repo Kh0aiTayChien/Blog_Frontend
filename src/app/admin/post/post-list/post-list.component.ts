@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../../service/user.service";
+import * as moment from "moment";
 
 @Component({
   selector: 'app-post-list',
@@ -8,7 +9,8 @@ import {UserService} from "../../../service/user.service";
 })
 export class PostListComponent implements OnInit {
 
-  posts? : any[] = []
+  posts : any
+  date : any
   constructor(private userService : UserService) { }
 
   ngOnInit(): void {
@@ -18,7 +20,9 @@ export class PostListComponent implements OnInit {
     this.userService.getPostByUser().subscribe(res => {
       console.log(res)
       this.posts = res
+
     })
   }
+
 
 }
