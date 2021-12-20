@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 export class CategoryComponent implements OnInit {
 
   posts: any[] = [];
-
+  category?: any;
   constructor(private categoryService: CategoryService,
               private router: ActivatedRoute) { }
 
@@ -18,12 +18,18 @@ export class CategoryComponent implements OnInit {
     // @ts-ignore
     let id = this.router.snapshot.paramMap.get('id');
     this.getPostByCate(id);
+    this.getCategory(id);
   }
 
   // @ts-ignore
   getPostByCate(id: any){
     this.categoryService.getPostByCategory(id).subscribe(res => {
       this.posts = res;
+    })
+  }
+  getCategory(id: any){
+    this.categoryService.getCategoryDetail(id).subscribe(res => {
+      this.category = res;
     })
   }
 }
