@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../../service/user.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AngularFireAuthGuard} from "@angular/fire/compat/auth-guard";
+// @ts-ignore
 import {AngularFireStorage} from "@angular/fire/compat/storage";
 import {finalize, Observable} from "rxjs";
+// @ts-ignore
 import {ToastrService} from "ngx-toastr";
 
 @Component({
@@ -69,6 +70,7 @@ export class CreatePostComponent implements OnInit {
       .pipe(
         finalize(() => {
           this.downloadURL = fileRef.getDownloadURL();
+          // @ts-ignore
           this.downloadURL.subscribe(url => {
             if (url) {
               this.fb1 = url;
@@ -77,7 +79,7 @@ export class CreatePostComponent implements OnInit {
           });
         })
       )
-      .subscribe(url => {
+      .subscribe((url: any) => {
         if (url) {
         }
       });

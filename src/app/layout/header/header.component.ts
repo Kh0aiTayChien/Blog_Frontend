@@ -11,6 +11,7 @@ import {NzNotificationService} from "ng-zorro-antd/notification";
 })
 export class HeaderComponent implements OnInit {
 
+  name?: string;
   isAccountLogin = false;
 
   constructor(private logoutService: LoginService,
@@ -21,6 +22,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.isAccountLogin = this.authService.checkLogin();
+    let user = JSON.parse(<string>localStorage.getItem('user'))
+    this.name = user.name
   }
 
   logout() {
