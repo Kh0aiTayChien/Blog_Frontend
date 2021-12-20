@@ -84,19 +84,19 @@ export class CreatePostComponent implements OnInit {
         }
       });
   }
-  title2(){
+  get title2(){
     return this.formCreatePost?.get('title')
   }
-   content(){
-    return this.formCreatePost?.get('content')
+   get content(){
+    return this.formCreatePost?.get('_content')
   }
-   desc(){
+   get desc(){
     return this.formCreatePost?.get('desc')
   }
-   accessModifier(){
+   get accessModifier(){
     return this.formCreatePost?.get('access_modifier')
   }
-  category(){
+  get category(){
     return this.formCreatePost?.get('category_id')
   }
 
