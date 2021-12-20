@@ -64,21 +64,24 @@
     </nz-card>
     <div id="text2">
       <nz-card nzTitle="">
-        <div nz-card-grid [ngStyle]="gridStyle" *ngFor="let post of posts">
+        <div nz-card-grid [ngStyle]="gridStyle" *ngFor="let post of posts   ">
           <div class="card" style="width: 100%;">
             <div class="card-body">
               <h5 class="card-title">{{post.title}}</h5>
-              <img src="{{post.image || this.defaultImage }}" class="img" alt="No Image">
+              <img src="{{post.image }}" class="img" >
+              <img *ngIf="!post.image" src="https://www.w3schools.com/w3images/lights.jpg" class="img">
               <p class="card-text">{{post.desc | slice:0:40}}...</p>
-              <p>
+
               <a href="#" class="card-link">{{ post.user.name}}</a>
               <button [routerLink]="['/detail',post.id]" class="btn btn-sm btn-outline-secondary readctn">Đọc tiếp</button>
-              </p>
+
             </div>
           </div>
         </div>
+
       </nz-card>
     </div>
+  <p align="center"> <nz-pagination [nzPageSize]="pageSize" [nzPageIndex]="currentPage" [nzTotal]=totalLength (nzPageIndexChange)="handleChangerPage($event)"> </nz-pagination></p>
   </div>
   <div class="col-12 col-md-4">
     <div id="widget-area" class="widget-area" role="complementary">
@@ -99,15 +102,7 @@
     </div>
   </div>
 </div>
-<nz-pagination
-  [(nzPageIndex)]="current"
-  [nzTotal]="50"
-  [nzSize]="'small'"
-  [nzShowTotal]="totalTemplate"
-  nzShowSizeChanger
-  nzShowQuickJumper
-></nz-pagination>
-<ng-template #totalTemplate let-total>Total {{ total }} items</ng-template>
+
 
 
 
