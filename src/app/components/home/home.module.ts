@@ -6,7 +6,7 @@ import {NzCardModule} from "ng-zorro-antd/card";
 import {CategoryComponent} from "../category/category.component";
 import {NzPaginationModule} from "ng-zorro-antd/pagination";
 import { PostDetailComponent } from '../post/post-detail/post-detail.component';
-import {PostDeleteComponent} from "../post/post-delete/post-delete.component";
+import {PostOfUserComponent} from "../post/post-of-user/post-of-user.component";
 
 const routes: Routes = [
   {
@@ -18,6 +18,10 @@ const routes: Routes = [
     component: CategoryComponent
   },
   {
+    path: "ofUser/:id",
+    component: PostOfUserComponent
+  },
+  {
     path: "detail/:id",
     component: PostDetailComponent
   },
@@ -26,7 +30,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [DashboardComponent, CategoryComponent],
+  declarations: [DashboardComponent, CategoryComponent, PostOfUserComponent],
   imports: [
     CommonModule,
     [RouterModule.forChild(routes)],
