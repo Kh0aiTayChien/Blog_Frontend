@@ -6,6 +6,7 @@ import {AdminMasterComponent} from "./admin/admin-master/admin-master.component"
 
 import {AuthenticationComponent} from "./layout/login/authentication/authentication.component";
 import {RegisterComponent} from "./layout/login/register/register.component";
+import {ChangepasswordComponent} from "./layout/login/changepassword/changepassword.component";
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'changepassword',
+    component: ChangepasswordComponent
   }
 
 ];
