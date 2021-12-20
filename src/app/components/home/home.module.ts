@@ -5,6 +5,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {NzCardModule} from "ng-zorro-antd/card";
 import {CategoryComponent} from "../category/category.component";
 import {NzPaginationModule} from "ng-zorro-antd/pagination";
+import { PostDetailComponent } from '../post/post-detail/post-detail.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: "ppl/category/:id",
     component: CategoryComponent
+  },
+  {
+    path: "detail/:id",
+    component: PostDetailComponent
   }
 ]
 
