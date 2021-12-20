@@ -14,8 +14,11 @@ export class PostService {
     return this.httpClient.post(environment.API_URL , data );
   }
 
-  showPublic(): Observable<any> {
-    return this.httpClient.get(environment.API_URL + 'ppl');
+
+  showPublic(page: number, pageSize: number): Observable<any> {
+
+    return this.httpClient.get(environment.API_URL + 'ppl?page='+page+'&pageSize='+pageSize)
+
   }
   showDetailPost(id : any): Observable<any> {
     let token = localStorage.getItem('token')
