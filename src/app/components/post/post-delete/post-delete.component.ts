@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PostService} from "../../../service/post.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-post-delete',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostDeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+  ) { }
 
   ngOnInit(): void {
+
   }
+
 
 }

@@ -70,8 +70,8 @@
               <h5 class="card-title">{{post.title}}</h5>
               <img src="{{post.image}}" width="50px">
               <p class="card-text">{{post.desc | slice:0:20}}...</p>
-              <a href="#" class="card-link">{{ post.user.name}}</a>
-              <button [routerLink]="['/detail',post.id]" class="btn btn-dark">Đọc tiếp</button>
+              <a [routerLink]="['/ofUser', post.user_id]" class="card-link">{{ post.user.name}}</a>
+              <a [routerLink]="['/detail',post.id]" class="card-link">Đọc tiếp</a>
             </div>
           </div>
         </div>
@@ -83,24 +83,8 @@
       <h4>Bài viết mới</h4>
       <ul *ngFor="let post of posts">
         <li>
-          <a href="https://blog.codegym.vn/2021/11/30/thay-doi-tu-duy-coder-voi-7-quyen-sach-kinh-dien/">{{post.title}}</a>
+          <a [routerLink]="['/detail',post.id]" >{{post.title}}</a>
         </li>
-<!--        <li>-->
-<!--          <a href="https://blog.codegym.vn/2021/11/30/ky-nang-lam-viec-nhom-hieu-qua-2/">KỸ NĂNG LÀM VIỆC NHÓM HIỆU-->
-<!--            QUẢ</a>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <a-->
-<!--            href="https://blog.codegym.vn/2021/11/30/ky-thuat-feynman-co-the-giup-ban-nho-moi-thu-minh-da-doc-bill-gates-cung-phai-su-dung/">Kỹ-->
-<!--            thuật Feynman có thể giúp bạn nhớ mọi thứ mình đã đọc, Bill Gates cũng phải sử dụng</a>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <a href="https://blog.codegym.vn/2021/11/30/ky-nang-on-tap/">Kỹ năng ôn tập!</a>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <a href="https://blog.codegym.vn/2021/11/30/vong-doi-cac-trang-thai-cua-mot-thread-trong-java/">Vòng đời (các-->
-<!--            trạng thái) của một Thread trong java</a>-->
-<!--        </li>-->
       </ul>
     </div>
 <!--    <div id="recent-comments-2" class="widget_container widget_content widget widget_recent_comments clearfix"><h4-->
@@ -157,21 +141,23 @@
     <div id="categories-2" class="widget_container widget_content widget widget_categories clearfix"><h4
       class="widget_title title"><span class="page_header_title">Categories</span></h4>
       <ul *ngFor="let cate of category">
-        <li class="cat-item cat-item-19"><a href="https://blog.codegym.vn/category/dotnet/">{{cate.name}}</a>
+        <li class="cat-item cat-item-19"><a [routerLink]="['/ppl/category', cate.id]">{{cate.name}}</a>
         </li>
-<!--        <li class="cat-item cat-item-20"><a href="https://blog.codegym.vn/category/database/">Database</a>-->
-<!--        </li>-->
-<!--        <li class="cat-item cat-item-16"><a href="https://blog.codegym.vn/category/java/">Java</a>-->
-<!--        </li>-->
-<!--        <li class="cat-item cat-item-17"><a href="https://blog.codegym.vn/category/javascript/">JavaScript</a>-->
-<!--        </li>-->
-<!--        <li class="cat-item cat-item-18"><a href="https://blog.codegym.vn/category/php/">PHP</a>-->
-<!--        </li>-->
-<!--        <li class="cat-item cat-item-1"><a href="https://blog.codegym.vn/category/uncategorized/">Uncategorized</a>-->
-<!--        </li>-->
       </ul>
     </div>
   </div>
 </div>
+<nz-pagination
+  [(nzPageIndex)]="current"
+  [nzTotal]="50"
+  [nzSize]="'small'"
+  [nzShowTotal]="totalTemplate"
+  nzShowSizeChanger
+  nzShowQuickJumper
+></nz-pagination>
+<ng-template #totalTemplate let-total>Total {{ total }} items</ng-template>
+
+
+
 
 

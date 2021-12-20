@@ -14,4 +14,11 @@ export class CategoryService {
     return this.http.get(environment.API_URL + 'ppl/category');
   }
 
+  getPostByCategory(id: any): Observable<any> {
+    // @ts-ignore
+    return this.http.get(environment.API_URL + `ppl/posts/${id}`);
+  }
+  getCategoryDetail(id: any): Observable<any> {
+    return this.http.get(environment.API_URL+ `ppl/category/${id}`);
+  }
 }
