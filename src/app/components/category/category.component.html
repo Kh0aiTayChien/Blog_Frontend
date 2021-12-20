@@ -1,38 +1,28 @@
-<section id="content" class="site_content">
-  <div class="container">
-    <div class="row"><main class="main_content archive_page_content col-md-12">
-      <header class="page-header page_main_title clearfix">
-        <h1 class="page-title title">Thể loại:</h1>	</header><!-- .page-header -->
-      <!-- Start posts list wrapper div -->
-      <div class="blog_posts_wrapper blog_posts_list clearfix  asalah_blog_global_setting banners_blog_style" *ngFor="let post of posts">
-        <article id="post-1029" class="blog_post_container post-1029 post type-post status-publish format-standard hentry category-php">
-          <div class="blog_post clearfix post_has_no_thumbnail">
-            <div class="posts_list_wrapper clearfix">
-              <div class="post_thumbnail_wrapper">
-              </div><!-- end post_thumbnail_wrapper -->
-              <div class="post_info_wrapper"> <!-- use this wrapper in list style only to group all info far from thumbnail wrapper -->
-                <div class="blog_post_title">
-                  <h2 class="entry-title title post_title"><a href="https://blog.codegym.vn/2019/11/02/2019-11-02-upload-file-trong-laravel-6-0-nhu-the-nao/" rel="bookmark">{{post.title}}</a></h2>			</div><!-- end blog_post_title -->
-                <div class="blog_post_meta clearfix">
-                  <span class="blog_meta_item blog_meta_category">In <a href="https://blog.codegym.vn/category/php/" rel="category tag">{{post.category.name}}</a></span><span class="blog_meta_item blog_meta_date"><span class="screen-reader-text"></span><time class="entry-date published updated" datetime="2019-11-02T09:21:55+00:00"></time></span><span class="blog_meta_item blog_meta_comments"><a href="https://blog.codegym.vn/2019/11/02/2019-11-02-upload-file-trong-laravel-6-0-nhu-the-nao/#respond">Leave a comment</a></span><span class="blog_meta_item blog_meta_author"><span class="author vcard"><a class="meta_author_avatar_url" href="https://blog.codegym.vn/author/nguyen-thi-xoan/"><img alt="" src="https://secure.gravatar.com/avatar/b2c5bc01994d7f477d40aa6d46487536?s=25&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/b2c5bc01994d7f477d40aa6d46487536?s=50&amp;d=mm&amp;r=g 2x" class="avatar avatar-25 photo" height="25" width="25"></a> <a class="url fn n" href="https://blog.codegym.vn/author/nguyen-thi-xoan/">{{post.user.name}}</a></span></span>			</div>
-                <div class="entry-content blog_post_text blog_post_description"><!-- Start entry-content div -->
-                  <p>{{post.content}}<a href="https://blog.codegym.vn/2019/11/02/2019-11-02-upload-file-trong-laravel-6-0-nhu-the-nao/" class="more_link more_link_dots"> … </a></p>						</div><!-- end entry-content div -->
-                <div class="blog_post_control clearfix">
-                  <div class="blog_post_control_item blog_post_readmore">
-                    <a href="https://blog.codegym.vn/2019/11/02/2019-11-02-upload-file-trong-laravel-6-0-nhu-the-nao/" class="read_more_link">Đọc tiếp</a>							</div><!-- end .blog_post_readmore -->
-                  <div class="blog_post_control_item blog_post_share">
-                    <span class="share_item share_sign"><i class="fa fa-share "></i></span>
-                    <span class="social_share_item_wrapper"><a rel="nofollow" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.codegym.vn/2019/11/02/2019-11-02-upload-file-trong-laravel-6-0-nhu-the-nao/" class="share_item share_item_social share_facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://blog.codegym.vn/2019/11/02/2019-11-02-upload-file-trong-laravel-6-0-nhu-the-nao/', 'facebook-share-dialog', 'width=626,height=436');
-	                                return false;"><i class="fa fa-facebook"></i></a></span>
-                    <span class="social_share_item_wrapper"><a rel="nofollow" href="https://twitter.com/share?url=https://blog.codegym.vn/2019/11/02/2019-11-02-upload-file-trong-laravel-6-0-nhu-the-nao/" target="_blank" class="share_item share_item_social share_twitter"><i class="fa fa-twitter"></i></a></span>
-                  </div><!-- blog_post_control_item blog_post_share -->
-                </div><!-- end blog_post_control -->
-              </div> <!-- .post_info_wrapper close post_info_wrapper in cas of list style-->
-            </div> <!-- .posts_list_wrapper -->
-          </div><!-- end blog_post -->
-        </article><!-- end #post-## blog_post_container-->
-      </div> <!-- .blog_posts_wrapper -->
-    </main><!-- .main_content -->
-    </div> <!-- .row -->
-  </div> <!-- .container -->
-</section>
+
+
+<H2 >
+  <button class="but granimate"> Thể loại: {{category.name}} </button>
+</H2>
+
+<nz-card nzTitle="" style="width:100%;" >
+  <p style="font-size:14px;color:rgba(0, 0, 0, 0.85);margin-bottom:16px;font-weight: 500;">Miêu tả về category</p>
+
+  <nz-card  *ngFor="let post of posts" class="title_post" nzType="inner" nzTitle="{{post.title}}   " >
+    <div class="row">
+      <div class="col-3">
+
+      <img src="https://www.w3schools.com/bootstrap/paris.jpg" class="img" alt="Cinque Terre"   >
+
+    </div>
+      <div class="col-9">
+    <nz-card>
+    <a>{{post.content| slice: 0: 600}}</a>
+    <button class="btn btn-lg btn-outline-secondary rounded-pill">   Đọc Tiếp </button>
+    </nz-card>
+      </div>
+    </div>
+  </nz-card>
+
+</nz-card>
+
+
