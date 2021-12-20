@@ -53,5 +53,13 @@ export class UserService {
     }
     return this.http.get<any>(environment.API_URL + 'users/getCategories',header)
   }
+  updateImage(data : any): Observable<any>{
+    let token = localStorage.getItem('token')
+    console.log(token)
+    let header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }
+    return this.http.post<any>(environment.API_URL + 'users/updateImage',data, header)
+  }
 
 }
