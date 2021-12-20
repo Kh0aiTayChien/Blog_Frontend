@@ -4,7 +4,7 @@ import {HeaderComponent} from './layouts/header/header.component';
 import {FooterComponent} from './layouts/footer/footer.component';
 import {SidebarComponent} from './layouts/sidebar/sidebar.component';
 import {RouterModule, Routes} from "@angular/router";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AdminMasterComponent} from './admin-master/admin-master.component';
 import {HomeComponent} from './home/home.component';
 import {PostListComponent} from './post/post-list/post-list.component';
@@ -51,13 +51,14 @@ const routes: Routes = [
     CreatePostComponent
 
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    NzButtonModule,
-    [RouterModule.forChild(routes)],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        NzButtonModule,
+        [RouterModule.forChild(routes)],
+        FormsModule,
 
-  ]
+    ]
 })
 export class AdminModule {
 }
