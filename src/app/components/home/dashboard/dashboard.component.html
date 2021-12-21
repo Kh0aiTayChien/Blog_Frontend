@@ -69,11 +69,11 @@
             <div class="card-body">
               <h5 class="card-title">{{post.title}}</h5>
 
-              <img src="{{post.image }}" class="img" >
+              <img src="{{post.image }}" class="img">
               <img *ngIf="!post.image" src="https://www.w3schools.com/w3images/lights.jpg" class="img">
               <p class="card-text">{{post.desc | slice:0:40}}...</p>
 
-              <a href="#" class="card-link">{{ post.user.name}}</a>
+              <a [routerLink]="['/ofUser', post.user_id]" class="card-link">{{ post.user.name}}</a>
               <button [routerLink]="['/detail',post.id]" class="btn btn-sm btn-outline-secondary readctn">Đọc tiếp</button>
 
 
