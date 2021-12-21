@@ -62,4 +62,8 @@ export class PostService {
     }
     return this.httpClient.post(environment.API_URL + `users/editPost/${id}`,data, header )
   }
+
+  findPost(key: any):Observable<any> {
+    return this.httpClient.post(environment.API_URL + 'search', key);
+  }
 }
