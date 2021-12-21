@@ -26,6 +26,14 @@ export class AuthenticationComponent implements OnInit {
     });
   }
 
+  get email() {
+    return this.formLogin?.get('email');
+  }
+
+  get password() {
+    return this.formLogin?.get('password');
+  }
+
   login() {
     const data = this.formLogin?.value;
     this.loginService.login(data).subscribe(res => {
@@ -43,14 +51,6 @@ export class AuthenticationComponent implements OnInit {
           console.log('notification clicked!');
         });
       } else if (res.status === 'error') {
-        this.notification
-          .blank(
-            'Đăng nhập thất bại',
-            'Vui lòng nhập lại',
-          )
-          .onClick.subscribe(() => {
-          console.log('notification clicked!');
-        });
         this.errLogin = res.message;
       }
     });
