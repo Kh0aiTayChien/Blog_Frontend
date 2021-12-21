@@ -9,7 +9,6 @@ import { PostDetailComponent } from '../post/post-detail/post-detail.component';
 import {PostOfUserComponent} from "../post/post-of-user/post-of-user.component";
 import {CreatePostComponent} from "../../admin/user/create-post/create-post.component";
 
-
 const routes: Routes = [
   {
     path: "",

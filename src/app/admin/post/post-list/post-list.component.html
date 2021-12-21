@@ -25,7 +25,7 @@
                 "{{post.desc | slice:0:50}}"
                 <div>
                 <button [routerLink]="['/detail',post.id]" class="btn btn-success">Chi tiết</button>
-                <button [routerLink]="['/edit',post.id]" class="btn btn-secondary">Chỉnh sửa</button>
+                <button [routerLink]="['/users/edit',post.id]" class="btn btn-secondary">Chỉnh sửa</button>
                 <button (click)="deletePost(post.id)" class="btn btn-danger">Xóa</button>
                 </div>
               </div>
