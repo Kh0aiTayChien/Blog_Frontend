@@ -11,11 +11,11 @@ export class PostService {
   constructor(private httpClient: HttpClient) { }
 
   create(data: any) : Observable<any> {
-    return this.httpClient.post(environment.API_URL , data )
+    return this.httpClient.post(environment.API_URL , data );
   }
 
   showPublic(): Observable<any> {
-    return this.httpClient.get(environment.API_URL + 'ppl')
+    return this.httpClient.get(environment.API_URL + 'ppl');
   }
   showDetailPost(id : any): Observable<any> {
     let token = localStorage.getItem('token')
@@ -23,6 +23,10 @@ export class PostService {
     let header = {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }
-    return this.httpClient.get(environment.API_URL + `posts/detail/${id}`, header )
+    return this.httpClient.get(environment.API_URL + `posts/detail/${id}`, header );
+  }
+
+  showPostWithAuthor(id: any): Observable<any> {
+    return this.httpClient.get(environment.API_URL + `ppl/ofUser/${id}`);
   }
 }

@@ -70,8 +70,8 @@
               <h5 class="card-title">{{post.title}}</h5>
               <img src="{{post.image}}" width="50px">
               <p class="card-text">{{post.desc | slice:0:20}}...</p>
-              <a href="#" class="card-link">{{ post.user.name}}</a>
-              <button [routerLink]="['/detail',post.id]" class="btn btn-dark">Đọc tiếp</button>
+              <a [routerLink]="['/ofUser', post.user_id]" class="card-link">{{ post.user.name}}</a>
+              <a [routerLink]="['/detail',post.id]" class="card-link">Đọc tiếp</a>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@
       <h4>Bài viết mới</h4>
       <ul *ngFor="let post of posts">
         <li>
-          <a href="https://blog.codegym.vn/2021/11/30/thay-doi-tu-duy-coder-voi-7-quyen-sach-kinh-dien/">{{post.title}}</a>
+          <a [routerLink]="['/detail',post.id]" >{{post.title}}</a>
         </li>
       </ul>
     </div>

@@ -10,7 +10,6 @@ import {PostCreateComponent} from "./post-create/post-create.component";
 import {NzCardModule} from "ng-zorro-antd/card";
 import { PostDetailComponent } from './post-detail/post-detail.component';
 
-
 const routes: Routes = [
   {
     path: "",
@@ -40,7 +39,7 @@ const routes: Routes = [
     PostEditComponent,
     PostListComponent,
     PostShowComponent,
-    PostDetailComponent
+    PostDetailComponent,
   ],
   imports: [
     CommonModule,
