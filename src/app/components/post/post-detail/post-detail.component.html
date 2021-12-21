@@ -6,16 +6,26 @@
           <!-- Post header-->
           <header class="mb-4">
             <!-- Post title-->
-            <h1 class="fw-bolder mb-1">{{post.title}}</h1>
+
             <!-- Post meta content-->
-            <div class="text-muted fst-italic mb-2">{{post.created_at}}</div>
+            <div class="text-muted fst-italic mb-2 time">{{post.created_at}}</div>
             <!-- Post categories-->
-            <h2>{{user[0].name}}</h2>
+            <div class="text-muted fst-italic mb-2 time">{{user[0].name}}</div>
           </header>
           <!-- Preview image figure-->
-          <figure class="mb-4"><img class="img-fluid rounded" src="{{post.image}}" alt="..." /></figure>
+
+         <div class="card">
+           <div class="row">
+             <div class="col-md-4">
+          <img  src="{{post.image}}" onerror="this.src='https://www.w3schools.com/bootstrap/paris.jpg'" class="img" >
+             </div>
+             <div class="col-md-8">
+               <h1 class="fw-bolder mb-1 h1 ">{{post.title}}</h1>
+             </div>
+           </div>
+         </div>
           <!-- Post content-->
-          <section class="mb-5">
+          <section class="mb-5 content">
             <p class="fs-5 mb-4">{{post.content}}</p>
           </section>
         </article>
@@ -24,7 +34,7 @@
           <div class="card bg-light">
             <div class="card-body">
               <!-- Comment form-->
-              <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+              <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Để lại comment của bạn nơi đây "></textarea></form>
               <!-- Comment with nested comments-->
               <div class="d-flex mb-4">
                 <!-- Parent comment-->
