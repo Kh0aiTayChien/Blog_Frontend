@@ -9,14 +9,18 @@
     <div class="row">
       <div class="col-3">
 
-        <img src="https://www.w3schools.com/bootstrap/paris.jpg" class="img" alt="Cinque Terre">
+      <img *ngIf="!post.image" src="https://www.w3schools.com/bootstrap/paris.jpg" class="img" alt="Cinque Terre"   >
+      <img *ngIf="post.image" src="{{post.image}}" class="img" >
+
 
       </div>
       <div class="col-9">
-        <nz-card>
-          <a>{{post.content| slice: 0: 600}}</a>
-          <button [routerLink]="['/detail',post.id]" class="btn btn-lg btn-outline-secondary rounded-pill"> Đọc Tiếp</button>
-        </nz-card>
+
+    <nz-card>
+    <a>{{post.content| slice: 0: 600}}</a>
+      <a [routerLink]="['/detail',post.id]"> <button  class="btn btn-sm btn-outline-secondary " >   Đọc Tiếp </button></a>
+    </nz-card>
+
       </div>
     </div>
   </nz-card>
