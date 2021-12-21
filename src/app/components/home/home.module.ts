@@ -7,6 +7,7 @@ import {CategoryComponent} from "../category/category.component";
 import {NzPaginationModule} from "ng-zorro-antd/pagination";
 import { PostDetailComponent } from '../post/post-detail/post-detail.component';
 import {PostOfUserComponent} from "../post/post-of-user/post-of-user.component";
+import {PostEditComponent} from "../../admin/post/post-edit/post-edit.component";
 
 
 const routes: Routes = [
