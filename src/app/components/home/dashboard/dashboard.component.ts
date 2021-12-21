@@ -10,6 +10,11 @@ import {en_US, NzI18nService, vi_VN} from "ng-zorro-antd/i18n";
 })
 export class DashboardComponent implements OnInit {
 
+
+  defaultImage =" https://www.w3schools.com/tags/img_girl.jpg";
+  pageSize:number = 1;
+  currentPage: number = 1;
+  totalLength:any;
   posts: any[] = [];
 
   category: any[] = [];
@@ -34,17 +39,27 @@ export class DashboardComponent implements OnInit {
     this.showPostPublic();
     this.cateService.getAll().subscribe(res => {
       this.category = res;
+      console.log('category',res);
     })
   }
 
   showPostPublic() {
-    this.postService.showPublic().subscribe(res => {
+    this.postService.showPublic(this.currentPage,this.pageSize).subscribe(res => {
       console.log(res)
-      this.posts = res;
+      this.posts = res.data;
+      this.totalLength=res.total;
+
     })
+
   }
 
   switchLanguage() {
     this.i18n.setLocale(vi_VN);
   }
+
+handleChangerPage(newPage: any){
+console.log(newPage);
+this.currentPage = newPage;
+this.showPostPublic()
+}
 }

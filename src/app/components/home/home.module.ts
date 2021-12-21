@@ -8,6 +8,7 @@ import {NzPaginationModule} from "ng-zorro-antd/pagination";
 import { PostDetailComponent } from '../post/post-detail/post-detail.component';
 import {PostOfUserComponent} from "../post/post-of-user/post-of-user.component";
 
+
 const routes: Routes = [
   {
     path: "",
@@ -24,11 +25,14 @@ const routes: Routes = [
   {
     path: "detail/:id",
     component: PostDetailComponent
-  }
+  },
+
 ]
 
 
 @NgModule({
+
+
   declarations: [DashboardComponent, CategoryComponent, PostOfUserComponent],
   imports: [
     CommonModule,

@@ -24,7 +24,9 @@
               <div class="card-body"><h5 class="card-title">{{post.title}}</h5><h6>{{posts.created_at}}</h6>
                 "{{post.desc | slice:0:50}}"
                 <div>
-                <button [routerLink]="['/detail',post.id]" class="btn btn-secondary">Chi tiết</button>
+                <button [routerLink]="['/detail',post.id]" class="btn btn-success">Chi tiết</button>
+                <button [routerLink]="['/edit',post.id]" class="btn btn-secondary">Chỉnh sửa</button>
+                <button (click)="deletePost(post.id)" class="btn btn-danger">Xóa</button>
                 </div>
               </div>
             </div>
