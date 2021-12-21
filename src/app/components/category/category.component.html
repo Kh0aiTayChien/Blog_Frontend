@@ -11,7 +11,8 @@
     <div class="row">
       <div class="col-3">
 
-      <img src="https://www.w3schools.com/bootstrap/paris.jpg" class="img" alt="Cinque Terre"   >
+      <img *ngIf="!post.image" src="https://www.w3schools.com/bootstrap/paris.jpg" class="img" alt="Cinque Terre"   >
+      <img *ngIf="post.image" src="{{post.image}}" class="img" >
 
     </div>
       <div class="col-9">
