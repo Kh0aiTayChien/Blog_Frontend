@@ -32,10 +32,7 @@ const routes: Routes = [
     path: 'profile',
     component: UserProfileComponent
   },
-  {
-    path: 'create/post',
-    component: CreatePostComponent
-  },
+
   {
     path: 'delete/:id',
     component: PostListComponent

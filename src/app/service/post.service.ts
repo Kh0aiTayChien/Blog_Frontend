@@ -14,9 +14,18 @@ export class PostService {
     return this.httpClient.post(environment.API_URL , data );
   }
 
-  showPublic(): Observable<any> {
-    return this.httpClient.get(environment.API_URL + 'ppl');
+
+  showPublic(page: number, pageSize: number): Observable<any> {
+
+    return this.httpClient.get(environment.API_URL + 'ppl?page='+page+'&pageSize='+pageSize)
+
   }
+  rencentPost(): Observable<any>{
+   return this.httpClient.get(environment.API_URL + 'recent');
+  }
+
+
+
   showDetailPost(id : any): Observable<any> {
     let token = localStorage.getItem('token')
     console.log(token)
@@ -36,5 +45,25 @@ export class PostService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }
     return this.httpClient.delete(environment.API_URL + `users/delete/${id}`, header )
+  }
+  getPostById(id : any): Observable<any>{
+    let token = localStorage.getItem('token')
+    console.log(token)
+    let header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }
+    return this.httpClient.get(environment.API_URL + `users/getPost/${id}`, header)
+  }
+  editPost(id : any,data : any): Observable<any>{
+    let token = localStorage.getItem('token')
+    console.log(token)
+    let header = {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
+    }
+    return this.httpClient.post(environment.API_URL + `users/editPost/${id}`,data, header )
+  }
+
+  findPost(key: any):Observable<any> {
+    return this.httpClient.post(environment.API_URL + 'search', key);
   }
 }
