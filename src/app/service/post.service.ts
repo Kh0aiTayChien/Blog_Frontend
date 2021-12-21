@@ -20,6 +20,12 @@ export class PostService {
     return this.httpClient.get(environment.API_URL + 'ppl?page='+page+'&pageSize='+pageSize)
 
   }
+  rencentPost(): Observable<any>{
+   return this.httpClient.get(environment.API_URL + 'recent');
+  }
+
+
+
   showDetailPost(id : any): Observable<any> {
     let token = localStorage.getItem('token')
     console.log(token)

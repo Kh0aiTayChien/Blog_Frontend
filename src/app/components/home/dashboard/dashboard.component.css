@@ -2,9 +2,10 @@
   margin-left: 70%;
 }
 .author{
-  margin-bottom: 1px;
+  margin-left: 500%;
 }
 .img {
   max-width: 100%;
-  max-height: 100%;
+  height: auto;
+  max-height: 95vh;
 }
