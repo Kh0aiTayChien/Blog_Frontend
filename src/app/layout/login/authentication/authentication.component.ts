@@ -55,4 +55,21 @@ export class AuthenticationComponent implements OnInit {
       }
     });
   }
+
+  visibility() {
+    let x: any = document.getElementById('Password');
+    if (x.type === 'password') {
+      x.type = "text";
+      // @ts-ignore
+      $('#eyeShow').show();
+      // @ts-ignore
+      $('#eyeSlash').hide();
+    } else {
+      x.type = "password";
+      // @ts-ignore
+      $('#eyeShow').hide();
+      // @ts-ignore
+      $('#eyeSlash').show();
+    }
+  }
 }
