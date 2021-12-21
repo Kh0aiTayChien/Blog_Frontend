@@ -4,19 +4,16 @@
       <div nz-card-grid [ngStyle]="first_gridStyle " >
         <div class="card" style="width: 100%;">
           <div class="card-body">
-
             <div class="row">
               <div class="col-md-3">
             <img src="{{recentPost[0].image }}" class="img" >
             <img *ngIf="!recentPost[0].image" src="https://www.w3schools.com/w3images/lights.jpg" class="img">
-
               </div>
               <div class="col-md-9">
               <h5 class="card-title">{{recentPost[0].title}}</h5>
                 <p class="card-text">{{recentPost[0].content | slice:0:200}}...</p>
                   <table border="0" cellpadding="10">
                     <tr>
-
                       <th align="left"> <a [routerLink]="['/ofUser',recentPost[0].user.id]"  class="card-link ">{{ recentPost[0].user.name}}</a> </th>
                     <th></th>
                     <th></th>
@@ -29,9 +26,7 @@
                     <th></th>
                     <th></th>
                     <th></th>
-
                       <th align="right"> <button [routerLink]="['/detail',recentPost[0].id]" class="btn btn-sm btn-outline-secondary readctn">Đọc</button> </th>
-
                     </tr>
                   </table>
               </div>
@@ -46,19 +41,14 @@
           <div class="card" style="width: 100%;">
             <div class="card-body">
               <h5 class="card-title">{{post.title}}</h5>
-
               <img src="{{post.image }}" class="img" >
               <img *ngIf="!post.image" src="https://tophinhanhdep.com/wp-content/uploads/2021/10/4K-Quality-Wallpapers.jpg" class="img">
-              <p class="card-text">{{post.desc | slice:0:40}}...</p>
-
+              <p class="card-text">{{post.content | slice:0:100}}...</p>
               <a [routerLink]="['/ofUser',post.user.id]"  class="card-link">{{ post.user.name}}</a>
               <button [routerLink]="['/detail',post.id]" class="btn btn-sm btn-outline-secondary readctn">Đọc tiếp</button>
-
-
             </div>
           </div>
         </div>
-
       </nz-card>
     </div>
   <p align="center"> <nz-pagination [nzPageSize]="pageSize" [nzPageIndex]="currentPage" [nzTotal]=totalLength (nzPageIndexChange)="handleChangerPage($event)"> </nz-pagination></p>
@@ -72,9 +62,8 @@
         </li>
       </ul>
     </div>
-
     <div id="categories-2" class="widget_container widget_content widget widget_categories clearfix"><h4
-      class="widget_title title"><span class="page_header_title">Categories</span></h4>
+      class="widget_title title"><span class="page_header_title">Thể loại</span></h4>
       <ul *ngFor="let cate of category">
         <li class="cat-item cat-item-19"><a [routerLink]="['/ppl/category', cate.id]">{{cate.name}}</a>
         </li>

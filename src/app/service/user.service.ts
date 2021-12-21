@@ -27,7 +27,7 @@ export class UserService {
     let header = {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }
-    return this.http.put<any>(environment.API_URL + 'users/edit' , data , header)
+    return this.http.put<any>(environment.API_URL + 'users/editProfile' , data , header)
   }
   getById(): Observable<any>{
     let token = localStorage.getItem('token')
@@ -35,7 +35,7 @@ export class UserService {
     let header = {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }
-    return this.http.get<any>(environment.API_URL + 'users/getById',header)
+    return this.http.get<any>(environment.API_URL + 'users/getUserById',header)
   }
   createPost(data : any): Observable<any>{
     let token = localStorage.getItem('token')
