@@ -18,7 +18,7 @@
       <div class="col-9">
     <nz-card>
     <a>{{post.content| slice: 0: 600}}</a>
-    <button class="btn btn-lg btn-outline-secondary rounded-pill">   Đọc Tiếp </button>
+      <a [routerLink]="['/detail',post.id]"> <button  class="btn btn-lg btn-outline-secondary rounded-pill" >   Đọc Tiếp </button></a>
     </nz-card>
       </div>
     </div>

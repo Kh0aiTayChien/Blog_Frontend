@@ -1,86 +1,41 @@
-<section id="content" class="site_content">
-  <div class="container">
+
+
+<H2 >
+  <button class="but granimate"> Tác giả: {{posts[0].user.name}} </button>
+</H2>
+
+<nz-card nzTitle="" style="width:100%;" >
+  <p style="font-size:14px;color:rgba(0, 0, 0, 0.85);margin-bottom:16px;font-weight: 500;">Thông Tin Cá Nhân</p>
+  <div class="row">
+    <div class="col-md-2">
+      <img *ngIf="!posts[0].user.image" src="https://www.w3schools.com/bootstrap/paris.jpg" class="img" alt="Cinque Terre"   >
+      <img *ngIf="posts[0].user.image" src="{{posts[0].user.image}}" class="img" >
+    </div>
+    <div class="col-md-4">
+      <span>Họ và Tên: {{posts[0].user.name}}</span> <br>
+      <span> Số Bài Viết: {{total}} </span><br>
+      <span>Ngày tạo tài khoản: {{posts[0].user.created_at |  date: 'short'}}</span><br>
+      <span>Bài viết đầu tiên: {{posts[0].created_at |  date: 'short'}}</span><br>
+        <span> Địa chỉ email: {{posts[0].user.email}}</span><br>
+    </div>
+  </div>
+  <nz-card  *ngFor="let post of posts" class="title_post" nzType="inner" nzTitle="{{post.title}}   " >
     <div class="row">
-      <main class="main_content archive_page_content col-md-12">
+      <div class="col-3">
 
-        <header class="page-header page_main_title clearfix">
-          <h1 class="page-title title">Author: <span class="vcard">Phan Cong Chinh</span></h1></header>
-        <!-- .page-header -->
+        <img *ngIf="!post.image" src="https://www.w3schools.com/bootstrap/paris.jpg" class="img" alt="Cinque Terre"   >
+        <img *ngIf="post.image" src="{{post.image}}" class="img" >
 
-        <div class="blog_posts_wrapper blog_posts_list clearfix  asalah_blog_global_setting banners_blog_style"
-             *ngFor="let post of posts">
-          <article id="post-13456"
-                   class="blog_post_container post-13456 post type-post status-publish format-standard hentry category-uncategorized">
+      </div>
+      <div class="col-9">
+        <nz-card>
+          <a>{{post.content| slice: 0: 600}}</a>
+          <a [routerLink]="['/detail',post.id]"> <button  class="btn btn-lg btn-outline-secondary rounded-pill" >   Đọc Tiếp </button></a>
+        </nz-card>
+      </div>
+    </div>
+  </nz-card>
 
-            <div class="blog_post clearfix post_has_no_thumbnail">
-              <div class="posts_list_wrapper clearfix">
-                <div class="post_thumbnail_wrapper">
-                </div><!-- end post_thumbnail_wrapper -->
-                <div class="post_info_wrapper">
-                  <!-- use this wrapper in list style only to group all info far from thumbnail wrapper -->
-                  <div class="blog_post_title">
-                    <h2 class="entry-title title post_title"><a
-                      href="https://blog.codegym.vn/2021/11/30/thay-doi-tu-duy-coder-voi-7-quyen-sach-kinh-dien/"
-                      rel="bookmark">{{post.title}}</a></h2></div><!-- end blog_post_title -->
-                  <div class="blog_post_meta clearfix">
-                    <span class="blog_meta_item blog_meta_category">In <a
-                      href="https://blog.codegym.vn/category/uncategorized/" rel="category tag">{{post.category.name}}</a></span><span
-                    class="blog_meta_item blog_meta_date"><span class="screen-reader-text"></span><time
-                    class="entry-date published updated"
-                    datetime="2021-11-30T17:24:26+00:00">November 30, 2021</time></span><span
-                    class="blog_meta_item blog_meta_comments"><a
-                    href="https://blog.codegym.vn/2021/11/30/thay-doi-tu-duy-coder-voi-7-quyen-sach-kinh-dien/#comments">1 Comment</a></span><span
-                    class="blog_meta_item blog_meta_author"><span class="author vcard"><a class="meta_author_avatar_url"
-                                                                                          href="https://blog.codegym.vn/author/phan-cong-chinh/"><img
-                    alt=""
-                    src="https://secure.gravatar.com/avatar/f3a1415ce5bd0a90fdbcb50e44b7ef39?s=25&amp;d=mm&amp;r=g"
-                    srcset="https://secure.gravatar.com/avatar/f3a1415ce5bd0a90fdbcb50e44b7ef39?s=50&amp;d=mm&amp;r=g 2x"
-                    class="avatar avatar-25 photo" height="25" width="25"></a> <a class="url fn n"
-                                                                                  href="https://blog.codegym.vn/author/phan-cong-chinh/">{{post.user.name}}</a></span></span>
-                  </div>
-                  <div class="entry-content blog_post_text blog_post_description"><!-- Start entry-content div -->
-                    <p>{{post.content}}<a
-                      href="https://blog.codegym.vn/2021/11/30/thay-doi-tu-duy-coder-voi-7-quyen-sach-kinh-dien/"
-                      class="more_link more_link_dots"> … </a></p></div><!-- end entry-content div -->
-
-                  <div class="blog_post_control clearfix">
+</nz-card>
 
 
-                    <div class="blog_post_control_item blog_post_readmore">
-                      <a [routerLink]="['/detail',post.id]" class="read_more_link">Đọc tiếp</a></div>
-                    <!-- end .blog_post_readmore -->
-                    <div class="blog_post_control_item blog_post_share">
-                      <span class="share_item share_sign"><i class="fa fa-share "></i></span>
-
-                      <span class="social_share_item_wrapper"><a rel="nofollow"
-                                                                 href="https://www.facebook.com/sharer/sharer.php?u=https://blog.codegym.vn/2021/11/30/thay-doi-tu-duy-coder-voi-7-quyen-sach-kinh-dien/"
-                                                                 class="share_item share_item_social share_facebook"
-                                                                 onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://blog.codegym.vn/2021/11/30/thay-doi-tu-duy-coder-voi-7-quyen-sach-kinh-dien/', 'facebook-share-dialog', 'width=626,height=436');
-	                                return false;"><i class="fa fa-facebook"></i></a></span>
-
-                      <span class="social_share_item_wrapper"><a rel="nofollow"
-                                                                 href="https://twitter.com/share?url=https://blog.codegym.vn/2021/11/30/thay-doi-tu-duy-coder-voi-7-quyen-sach-kinh-dien/"
-                                                                 target="_blank"
-                                                                 class="share_item share_item_social share_twitter"><i
-                        class="fa fa-twitter"></i></a></span>
-
-
-                    </div><!-- blog_post_control_item blog_post_share -->
-                  </div><!-- end blog_post_control -->
-                </div> <!-- .post_info_wrapper close post_info_wrapper in cas of list style-->
-              </div> <!-- .posts_list_wrapper -->
-
-            </div><!-- end blog_post -->
-          </article><!-- end #post-## blog_post_container-->
-        </div> <!-- .blog_posts_wrapper -->
-        <nav class="navigation pagination" role="navigation" aria-label="Posts">
-          <h2 class="screen-reader-text">Posts navigation</h2>
-          <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
-            <a class="page-numbers" href="https://blog.codegym.vn/author/phan-cong-chinh/page/2/">2</a>
-            <a class="next page-numbers" href="https://blog.codegym.vn/author/phan-cong-chinh/page/2/"><i
-              class="fa fa-angle-right"></i></a></div>
-        </nav>
-      </main><!-- .main_content -->
-    </div> <!-- .row -->
-  </div> <!-- .container -->
-</section>

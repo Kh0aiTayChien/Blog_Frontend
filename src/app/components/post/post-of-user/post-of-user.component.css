@@ -1,0 +1,36 @@
+h2
+{
+  margin-top: 10% ;
+}
+.img {
+  max-width: 100%;
+  height: auto;
+  max-height: 95vh;
+}
+.but{
+  border-style: none;
+}
+.granimate {
+  background-color: #2ecc71;
+  animation: hue 3s linear 0s infinite reverse;
+}
+.granimate::before {
+  background: linear-gradient(105deg, rgba(255, 190, 0, 0), #ffbe00);
+  animation: hue 5s linear 1s infinite;
+}
+
+@keyframes hue {
+  to {
+    filter: hue-rotate(1turn);
+  }
+
+
+}
+.title_post{
+  margin-top: 5%;
+}
+
+
+
+
+
