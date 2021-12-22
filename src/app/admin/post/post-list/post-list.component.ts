@@ -34,7 +34,7 @@ export class PostListComponent implements OnInit {
     this.postService.deletePost(id).subscribe( res => {
       this.toastr.success('Xóa thành công!', 'Trạng thái');
       this.posts = res
-      console.log(res)
+      console.log(res )
     })
   }
 

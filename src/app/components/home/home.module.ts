@@ -5,9 +5,9 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {NzCardModule} from "ng-zorro-antd/card";
 import {CategoryComponent} from "../category/category.component";
 import {NzPaginationModule} from "ng-zorro-antd/pagination";
-import { PostDetailComponent } from '../post/post-detail/post-detail.component';
+import {PostDetailComponent} from '../post/post-detail/post-detail.component';
 import {PostOfUserComponent} from "../post/post-of-user/post-of-user.component";
-import {PostEditComponent} from "../../admin/post/post-edit/post-edit.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 const routes: Routes = [
@@ -32,14 +32,13 @@ const routes: Routes = [
 
 
 @NgModule({
-
-
-  declarations: [DashboardComponent, CategoryComponent, PostOfUserComponent],
+  declarations: [DashboardComponent, CategoryComponent, PostOfUserComponent, PostDetailComponent],
   imports: [
     CommonModule,
     [RouterModule.forChild(routes)],
     NzCardModule,
     NzPaginationModule,
+    ReactiveFormsModule,
   ]
 })
 export class HomeModule {
