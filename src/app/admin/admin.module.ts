@@ -13,7 +13,7 @@ import {UserProfileComponent} from './user-profile/user-profile.component';
 import {NzButtonModule} from "ng-zorro-antd/button";
 import { CreatePostComponent } from './user/create-post/create-post.component';
 import { PostEditComponent } from './post/post-edit/post-edit.component';
-
+import {NzPopconfirmModule} from "ng-zorro-antd/popconfirm";
 
 const routes: Routes = [
   {
@@ -59,14 +59,14 @@ const routes: Routes = [
     PostEditComponent
 
   ],
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        NzButtonModule,
-        [RouterModule.forChild(routes)],
-        FormsModule,
-
-    ]
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    NzButtonModule,
+    [RouterModule.forChild(routes)],
+    FormsModule,
+    NzPopconfirmModule
+  ]
 })
 export class AdminModule {
 }
