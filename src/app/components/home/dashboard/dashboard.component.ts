@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
 
   defaultImage =" https://www.w3schools.com/tags/img_girl.jpg";
-  pageSize:number = 4;
+  pageSize:number = 6;
   currentPage: number = 1;
   totalLength:any;
   posts: any[] = [];
