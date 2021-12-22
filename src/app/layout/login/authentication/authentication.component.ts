@@ -45,7 +45,7 @@ export class AuthenticationComponent implements OnInit {
         this.notification
           .blank(
             'Đăng nhập thành công',
-            'Chào mừng bạn đên với trang Blog'
+            'Chào mừng bạn đên với trang Blog',
           )
           .onClick.subscribe(() => {
           console.log('notification clicked!');
