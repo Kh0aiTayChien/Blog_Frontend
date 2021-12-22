@@ -10,6 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 export class PostOfUserComponent implements OnInit {
 
   posts: any[] = [];
+  total?: number;
 
   constructor(private postService: PostService,
               private router: ActivatedRoute) { }
@@ -22,6 +23,7 @@ export class PostOfUserComponent implements OnInit {
   showPostWithAuthor(id: any) {
     this.postService.showPostWithAuthor(id).subscribe(res =>{
       this.posts = res;
+      this.total = res.length;
     })
   }
 

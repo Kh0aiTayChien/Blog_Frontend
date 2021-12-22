@@ -12,11 +12,11 @@ export class DashboardComponent implements OnInit {
 
 
   defaultImage =" https://www.w3schools.com/tags/img_girl.jpg";
-  pageSize:number = 1;
+  pageSize:number = 6;
   currentPage: number = 1;
   totalLength:any;
   posts: any[] = [];
-
+  recentPost: any[] = [];
   category: any[] = [];
 
   current = 1;
@@ -37,10 +37,12 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.showPostPublic();
+
     this.cateService.getAll().subscribe(res => {
       this.category = res;
       console.log('category',res);
     })
+    this.showPostRecent()
   }
 
   showPostPublic() {
@@ -61,5 +63,11 @@ handleChangerPage(newPage: any){
 console.log(newPage);
 this.currentPage = newPage;
 this.showPostPublic()
+}
+showPostRecent(){
+    this.postService.rencentPost().subscribe(res => {
+        this.recentPost = res;
+        console.log(res);
+    })
 }
 }

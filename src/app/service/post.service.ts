@@ -20,6 +20,12 @@ export class PostService {
     return this.httpClient.get(environment.API_URL + 'ppl?page='+page+'&pageSize='+pageSize)
 
   }
+  rencentPost(): Observable<any>{
+   return this.httpClient.get(environment.API_URL + 'recent');
+  }
+
+
+
   showDetailPost(id : any): Observable<any> {
     let token = localStorage.getItem('token')
     let header = {
@@ -52,6 +58,7 @@ export class PostService {
     }
     return this.httpClient.post(environment.API_URL + `users/editPost/${id}`,data, header )
   }
+
   getComment(id : any):Observable<any>{
     let token = localStorage.getItem('token')
     let header = {
@@ -59,11 +66,14 @@ export class PostService {
     }
     return this.httpClient.get(environment.API_URL + `posts/getComment/${id}`,header)
   }
-  createComment(data : any): Observable<any>{
+  createComment(data : any): Observable<any> {
     let token = localStorage.getItem('token')
     let header = {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }
-    return this.httpClient.post(environment.API_URL + 'users/createComment',data,header)
+    return this.httpClient.post(environment.API_URL + 'users/createComment', data, header)
+  }
+  findPost(key: any):Observable<any> {
+    return this.httpClient.post(environment.API_URL + 'search', key);
   }
 }

@@ -6,6 +6,7 @@ import {AngularFireStorage} from "@angular/fire/compat/storage";
 import {finalize, Observable} from "rxjs";
 // @ts-ignore
 import {ToastrService} from "ngx-toastr";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-post',
@@ -23,7 +24,8 @@ export class CreatePostComponent implements OnInit {
   constructor(private userService: UserService,
               private fb: FormBuilder,
               private storage: AngularFireStorage,
-              private toastr: ToastrService
+              private toastr: ToastrService,
+              private router: Router
   ) {
   }
 
@@ -53,6 +55,7 @@ export class CreatePostComponent implements OnInit {
       this.userService.createPost(data).subscribe(res => {
         console.log(res)
         this.toastr.success('Tạo mới bài viết thành công', 'Trạng thái');
+        this.router.navigate(['/']);
       })
     })
 

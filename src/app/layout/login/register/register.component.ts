@@ -2,7 +2,6 @@ import {Component, OnInit , TemplateRef } from '@angular/core';
 import {LoginService} from "../../../service/login.service";
 import {Router} from "@angular/router";
 import {FormBuilder, Validators} from "@angular/forms";
-
 import {NzNotificationService} from "ng-zorro-antd/notification";
 
 @Component({
@@ -26,6 +25,17 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required]]
     });
   }
+  get name() {
+    return this.formRegister?.get('name');
+  }
+
+  get email() {
+    return this.formRegister?.get('email');
+  }
+
+  get password() {
+    return this.formRegister?.get('password');
+  }
 
   register(template: TemplateRef<{}>): void {
     let data = this.formRegister?.value;
@@ -33,9 +43,25 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['login']);
       this.notification.template(template);
     },error => {
-      //
       let message = 'Tài khoản này đã tồn tại'
       this.errRegister = message;
     })
+  }
+
+  visibility() {
+    let x: any = document.getElementById('Password');
+    if (x.type === 'password') {
+      x.type = "text";
+      // @ts-ignore
+      $('#eyeShow').show();
+      // @ts-ignore
+      $('#eyeSlash').hide();
+    } else {
+      x.type = "password";
+      // @ts-ignore
+      $('#eyeShow').hide();
+      // @ts-ignore
+      $('#eyeSlash').show();
+    }
   }
 }
