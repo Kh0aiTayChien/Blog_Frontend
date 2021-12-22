@@ -1,3 +1,5 @@
+
+
   <div class="container mt-5">
     <div class="row">
       <div class="col">
@@ -6,7 +8,7 @@
           <!-- Post header-->
           <header class="mb-4">
             <!-- Post title-->
-
+            <h1 class="fw-bolder mb-1 h1 ">{{post.title}}</h1>
             <!-- Post meta content-->
             <div class="text-muted fst-italic mb-2 time">{{post.created_at}}</div>
             <!-- Post categories-->
@@ -14,16 +16,9 @@
           </header>
           <!-- Preview image figure-->
 
-         <div class="card">
-           <div class="row">
-             <div class="col-md-4">
-          <img  src="{{post.image}}" onerror="this.src='https://www.w3schools.com/bootstrap/paris.jpg'" class="img" >
-             </div>
-             <div class="col-md-8">
-               <h1 class="fw-bolder mb-1 h1 ">{{post.title}}</h1>
-             </div>
-           </div>
-         </div>
+
+          <img width="50%" src="{{post.image}}" onerror="this.src='https://www.viet247.net/images/noimage_food_viet247.jpg'" class="img" >
+
           <!-- Post content-->
           <section class="mb-5 content">
             <p class="fs-5 mb-4">{{post.content}}</p>

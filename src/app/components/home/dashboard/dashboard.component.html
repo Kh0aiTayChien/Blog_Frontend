@@ -42,7 +42,7 @@
             <div class="card-body">
               <h5 class="card-title">{{post.title}}</h5>
               <img src="{{post.image }}" class="img" >
-              <img *ngIf="!post.image" src="https://tophinhanhdep.com/wp-content/uploads/2021/10/4K-Quality-Wallpapers.jpg" class="img">
+              <img *ngIf="!post.image" src="https://www.viet247.net/images/noimage_food_viet247.jpg" class="img">
               <p class="card-text">{{post.content | slice:0:100}}...</p>
               <a [routerLink]="['/ofUser',post.user.id]"  class="card-link">{{ post.user.name}}</a>
               <button [routerLink]="['/detail',post.id]" class="btn btn-sm btn-outline-secondary readctn">Đọc tiếp</button>
