@@ -59,13 +59,18 @@ export class PostDetailComponent implements OnInit {
   }
   comment(){
      let data = this.formCreateComment?.value
-    let id = this.router.snapshot.paramMap.get('id');
-     this.postService.createComment(data).subscribe( res => {
-       this.getComments();
-       this.formCreateComment = this.fb.group({
-         '_content' : [],
+     let user = localStorage.getItem('token')
+    console.log(user)
+     if(user){
+       this.postService.createComment(data).subscribe( res => {
+         this.getComments();
+         this.formCreateComment = this.fb.group({
+           '_content' : [],
+         })
        })
-     })
+     } else {
+       this.toastr.error("Bạn cần phải đăng nhập")
+     }
   }
 
 

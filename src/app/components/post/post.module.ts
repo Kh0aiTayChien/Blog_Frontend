@@ -45,7 +45,6 @@ const routes: Routes = [
     PostEditComponent,
     PostListComponent,
     PostShowComponent,
-    PostDetailComponent,
     PostSearchComponent,
   ],
   imports: [
