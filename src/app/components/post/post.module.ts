@@ -9,6 +9,8 @@ import { PostShowComponent } from './post-show/post-show.component';
 import {PostCreateComponent} from "./post-create/post-create.component";
 import {NzCardModule} from "ng-zorro-antd/card";
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import {BrowserModule} from "@angular/platform-browser";
+
 import { PostSearchComponent } from './post-search/post-search.component';
 
 const routes: Routes = [

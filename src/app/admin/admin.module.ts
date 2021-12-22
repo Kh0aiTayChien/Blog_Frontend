@@ -56,7 +56,8 @@ const routes: Routes = [
     UserListComponent,
     UserProfileComponent,
     CreatePostComponent,
-    PostEditComponent
+    PostEditComponent,
+
 
   ],
   imports: [

@@ -25,6 +25,17 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required]]
     });
   }
+  get name() {
+    return this.formRegister?.get('name');
+  }
+
+  get email() {
+    return this.formRegister?.get('email');
+  }
+
+  get password() {
+    return this.formRegister?.get('password');
+  }
 
   register(template: TemplateRef<{}>): void {
     let data = this.formRegister?.value;
