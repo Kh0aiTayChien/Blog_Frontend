@@ -7,6 +7,7 @@ import {AdminMasterComponent} from "./admin/admin-master/admin-master.component"
 import {AuthenticationComponent} from "./layout/login/authentication/authentication.component";
 import {RegisterComponent} from "./layout/login/register/register.component";
 import {ChangepasswordComponent} from "./layout/login/changepassword/changepassword.component";
+import {CommonModule} from "@angular/common";
 
 const routes: Routes = [
   {
@@ -51,7 +52,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

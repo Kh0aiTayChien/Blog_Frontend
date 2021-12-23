@@ -1,0 +1,15 @@
+.h1{
+  margin-top: 5%;
+  text-align: left;
+}
+.time{
+  margin-top: 1%;
+}
+.img {
+  max-width: 100%;
+  height: auto;
+  max-height: 95vh;
+}
+.content{
+  margin-top: 5%;
+}

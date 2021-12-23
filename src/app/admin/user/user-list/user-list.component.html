@@ -36,7 +36,13 @@
             Update
           </svg>
         </button>
-        <button class="btn btn-danger" (click)="deleteUser(user.id)">
+        <button nz-popconfirm
+                nzPopconfirmTitle="Bạn có chắc muốn xoá không?"
+                nzPopconfirmPlacement="bottom"
+                nzOkText="Xác nhận"
+                nzCancelText="Huỷ"
+                (nzOnConfirm)="confirm(user.id)"
+                (nzOnCancel)="cancel()" class="btn btn-danger" >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
                viewBox="0 0 16 16">
             <path

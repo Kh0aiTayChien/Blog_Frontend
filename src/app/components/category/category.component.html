@@ -1,26 +1,22 @@
-<H2>
-  <button class="but granimate"> Thể loại: {{category.name}} </button>
+<<<<<<< HEAD
+
+
+<H2 >
+  <button class="but granimate"> Thể loại: {{category?.name}} </button>
 </H2>
-
 <nz-card nzTitle="" style="width:100%;">
-  <p style="font-size:14px;color:rgba(0, 0, 0, 0.85);margin-bottom:16px;font-weight: 500;">Miêu tả về category</p>
-
   <nz-card *ngFor="let post of posts" class="title_post" nzType="inner" nzTitle="{{post.title}}   ">
     <div class="row">
       <div class="col-3">
-
+        <div class="text-muted fst-italic mb-2 time">{{post.user.name}} {{post.created_at | date:'short'}}</div>
       <img *ngIf="!post.image" src="https://www.w3schools.com/bootstrap/paris.jpg" class="img" alt="Cinque Terre"   >
       <img *ngIf="post.image" src="{{post.image}}" class="img" >
-
-
       </div>
       <div class="col-9">
-
     <nz-card>
     <a>{{post.content| slice: 0: 600}}</a>
       <a [routerLink]="['/detail',post.id]"> <button  class="btn btn-sm btn-outline-secondary " >   Đọc Tiếp </button></a>
     </nz-card>
-
       </div>
     </div>
   </nz-card>
