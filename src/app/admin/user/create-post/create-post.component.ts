@@ -34,6 +34,7 @@ export class CreatePostComponent implements OnInit {
     this.userService.getCategories().subscribe(res => {
       console.log(res)
       this.categories = res
+      console.log(this.categories)
     })
     // console.log(this.categories)
     console.log(this.fb1)
